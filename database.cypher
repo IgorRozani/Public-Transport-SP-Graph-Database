@@ -54,10 +54,10 @@ CREATE
 
 
 // Lines
-CREATE (Amarela:Line {name: 'Amarela', type:'Metro'}),
-(Azul:Line {name:'Azul', type:'Metro'}),
-(Verde:Line {name: 'Verde', type:'Metro'}),
-(Prata:Line {name: Prata', type:'Metro'})
+CREATE (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
+(Azul:Line {name:'Azul', type:'Metro', number: 1}),
+(Verde:Line {name: 'Verde', type:'Metro', number: 2}),
+(Prata:Line {name: Prata', type:'Metro', number: 15})
 
 
 // Connection between stations
