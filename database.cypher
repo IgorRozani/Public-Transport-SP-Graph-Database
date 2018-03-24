@@ -11,14 +11,14 @@ CREATE
 (Luz:Station{name:'Luz'}),
 
 // Blue Line Stations
-(Tucuruvi:Station {name:’Tucuruvi’}),
-(ParadaInglesa:Station {name:’Parada Inglesa’}),
-(JardimSaoPaulo:Station {name:’Jardim São Paulo - Ayrton Senna’}),
-(Santana:Station {name:’Santana’’}),
-(Carandiru:Station {name:’Carandiru’}),
-(Tiete:Station {name:’Portuguesa - Tietê’}),
-(Armenia:Station {name:’Armênia’}),
-(Tiradentes:Station {name:’Tiradentes’}),
+(Tucuruvi:Station {name:'Tucuruvi'}),
+(ParadaInglesa:Station {name:'Parada Inglesa'}),
+(JardimSaoPaulo:Station {name:'Jardim São Paulo - Ayrton Senna'}),
+(Santana:Station {name:'Santana'}),
+(Carandiru:Station {name:'Carandiru'}),
+(Tiete:Station {name:'Portuguesa - Tietê'}),
+(Armenia:Station {name:'Armênia'}),
+(Tiradentes:Station {name:'Tiradentes'}),
 (SaoBento:Station{name:'São Bento'}),
 (Se:Station{name:'Sé'}),
 (Liberdade:Station{name:'Liberdade'}),
@@ -26,19 +26,19 @@ CREATE
 (Vergueiro:Station{name:'Vergueiro'}),
 (Paraiso:Station{name:'Paraíso'}),
 (AnaRosa:Station{name:'Ana Rosa'}),
-(VilaMariana:Station {name:’Vila Mariana’}),
-(SantaCruz:Station {name:’Santa Cruz’}),
-(PracaArvore:Station {name:’Praça da Árvore’}),
-(Saude:Station {name:’Saúde’}),
-(SaoJudas:Station {name:’São Judas’}),
-(Conceicao:Station {name:’Conceição’}),
-(Jabaquara:Station {name:’Jabaquara’}),
+(VilaMariana:Station {name:'Vila Mariana'}),
+(SantaCruz:Station {name:'Santa Cruz'}),
+(PracaArvore:Station {name:'Praça da Árvore'}),
+(Saude:Station {name:'Saúde'}),
+(SaoJudas:Station {name:'São Judas'}),
+(Conceicao:Station {name:'Conceição'}),
+(Jabaquara:Station {name:'Jabaquara'}),
 
 
 //Green Line Stations
-(VilaMadalena:Station {name: ‘Vila Madalena’}),
-(Sumare:Station {name: ‘Santuário Nossa senhora de Fátima - Sumaré’}),
-(Clinicas:Station {name: ‘Clínicas’}),
+(VilaMadalena:Station {name: 'Vila Madalena'}),
+(Sumare:Station {name: 'Santuário Nossa senhora de Fátima - Sumaré'}),
+(Clinicas:Station {name: 'Clínicas'}),
 (TrianonMasp:Station {name: 'Trianon-Masp' }),
 (Brigadeiro:Station {name:'Brigadeiro'}),
 (ChacaraKlabin:Station {name: 'Chácara Klabin'}),
@@ -57,7 +57,7 @@ CREATE
 CREATE (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Azul:Line {name:'Azul', type:'Metro', number: 1}),
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
-(Prata:Line {name: Prata', type:'Metro', number: 15})
+(Prata:Line {name: 'Prata', type:'Metro', number: 15})
 
 
 // Connection between stations
@@ -99,7 +99,7 @@ CREATE
 (Clinicas)-[:Connect]->(Paulista),
 (Paulista)-[:Connect]->(TrianonMasp),
 (TrianonMasp)-[:Connect]->(Brigadeiro),
-(Brigadeiro)-[:Connect]->(Paraiso)
+(Brigadeiro)-[:Connect]->(Paraiso),
 (AnaRosa)-[:Connect]->(ChacaraKlabin),
 (ChacaraKlabin)-[:Connect]->(Santos),
 (Santos)-[:Connect]->(AltoIpiranga),
@@ -160,4 +160,3 @@ CREATE
 (Verde)-[:Has]->(VilaPrudente),
 (Prata)-[:Has]->(VilaPrudente),
 (Prata)-[:Has]->(Oratorio)
-
