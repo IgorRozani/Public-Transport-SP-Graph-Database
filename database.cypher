@@ -36,8 +36,19 @@ CREATE
 
 
 //Green Line Stations
+(VilaMadalena:Station {name: ‘Vila Madalena’}),
+(Sumare:Station {name: ‘Santuário Nossa senhora de Fátima - Sumaré’}),
+(Clinicas:Station {name: ‘Clínicas’}),
 (TrianonMasp:Station {name: 'Trianon-Masp' }),
-(Brigadeiro:Station {name:'Brigadeiro'})
+(Brigadeiro:Station {name:'Brigadeiro'}),
+(ChacaraKlabin:Station {name: 'Chácara Klabin'}),
+(Santos:Station {name:'Santos Imigrantes'}),
+(AltoIpiranga:Station {name:'Alto do Ipiranga'}),
+(Sacoma:Station {name:'Sacomã'}),
+(Tamanduatei:Station {name:'Tamanduateí'}),
+(VilaPrudente:Station {name:'Vila Prudente'})
+
+
 
 // Lines
 CREATE (Amarela:Line {name: 'Amarela', type:'Metro'}),
@@ -79,9 +90,19 @@ CREATE
 (SaoJudas)-[:Connect]->(Conceicao),
 (Conceicao)-[:Connect]->(Jabaquara),
 //Green Line
+(VilaMadalena)-[:Connect]->(Sumare),
+(Sumare)-[:Connect]->(Clinicas),
+(Clinicas)-[:Connect]->(Paulista),
 (Paulista)-[:Connect]->(TrianonMasp),
 (TrianonMasp)-[:Connect]->(Brigadeiro),
 (Brigadeiro)-[:Connect]->(Paraiso)
+(AnaRosa)-[:Connect]->(ChacaraKlabin),
+(ChacaraKlabin)-[:Connect]->(Santos),
+(Santos)-[:Connect]->(AltoIpiranga),
+(AltoIpiranga)-[:Connect]->(Sacoma),
+(Sacoma)-[:Connect]->(Tamanduatei),
+(Tamanduatei)-[:Connect]->(VilaPrudente),
+
 
 
 // Line has Stations
@@ -111,15 +132,25 @@ CREATE
 (Azul)-[:Has]->(Vergueiro),
 (Azul)-[:Has]->(Paraiso),
 (Azul)-[:Has]->(AnaRosa),
+(Azul)-[:Has]->(VilaMariana),
+(Azul)-[:Has]->(SantaCruz),
+(Azul)-[:Has]->(PracaArvore),
+(Azul)-[:Has]->(Saude),
+(Azul)-[:Has]->(SaoJudas),
+(Azul)-[:Has]->(Conceicao),
+(Azul)-[:Has]->(Jabaquara),
+(Verde)-[:Has]->(VilaMadalena),
+(Verde)-[:Has]->(Sumare),
+(Verde)-[:Has]->(Clinicas),
 (Verde)-[:Has]->(Paulista),
 (Verde)-[:Has]->(TrianonMasp),
 (Verde)-[:Has]->(Brigadeiro),
 (Verde)-[:Has]->(Paraiso),
 (Verde)-[:Has]->(AnaRosa),
-(Verde)-[:Has]->(VilaMariana),
-(Verde)-[:Has]->(SantaCruz),
-(Verde)-[:Has]->(PracaArvore),
-(Verde)-[:Has]->(Saude),
-(Verde)-[:Has]->(SaoJudas),
-(Verde)-[:Has]->(Conceicao),
-(Verde)-[:Has]->(Jabaquara)
+(Verde)-[:Has]->(ChacaraKlabin),
+(Verde)-[:Has]->(Santos),
+(Verde)-[:Has]->(AltoIpiranga),
+(Verde)-[:Has]->(Sacoma),
+(Verde)-[:Has]->(Tamanduatei),
+(Verde)-[:Has]->(VilaPrudente)
+
