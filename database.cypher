@@ -46,14 +46,18 @@ CREATE
 (AltoIpiranga:Station {name:'Alto do Ipiranga'}),
 (Sacoma:Station {name:'Sacomã'}),
 (Tamanduatei:Station {name:'Tamanduateí'}),
-(VilaPrudente:Station {name:'Vila Prudente'})
+(VilaPrudente:Station {name:'Vila Prudente'}),
+
+//Silver Line Stations
+(Oratorio:Station {name:'Oratório'})
 
 
 
 // Lines
 CREATE (Amarela:Line {name: 'Amarela', type:'Metro'}),
 (Azul:Line {name:'Azul', type:'Metro'}),
-(Verde:Line {name: 'Verde', type:'Metro'})
+(Verde:Line {name: 'Verde', type:'Metro'}),
+(Prata:Line {name: Prata', type:'Metro'})
 
 
 // Connection between stations
@@ -102,7 +106,8 @@ CREATE
 (AltoIpiranga)-[:Connect]->(Sacoma),
 (Sacoma)-[:Connect]->(Tamanduatei),
 (Tamanduatei)-[:Connect]->(VilaPrudente),
-
+//Silver Line
+(VilaPrudente)-[:Connect]->(Oratorio)
 
 
 // Line has Stations
@@ -152,5 +157,7 @@ CREATE
 (Verde)-[:Has]->(AltoIpiranga),
 (Verde)-[:Has]->(Sacoma),
 (Verde)-[:Has]->(Tamanduatei),
-(Verde)-[:Has]->(VilaPrudente)
+(Verde)-[:Has]->(VilaPrudente),
+(Prata)-[:Has]->(VilaPrudente),
+(Prata)-[:Has]->(Oratorio)
 
