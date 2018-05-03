@@ -48,6 +48,11 @@ CREATE
 (Tamanduatei:Station {name:'Tamanduateí'}),
 (VilaPrudente:Station {name:'Vila Prudente'}),
 
+// Jade Line Stations
+(AeroportoGuarulhos:Station {name: 'Aeroporto - Guarulhos'}),
+(GuarulhosCecap:Station {name:'Guarulhos - Cecap'}),
+(EngGoulart:Station {name:'Engenheiro Goulart'}),
+
 //Silver Line Stations
 (Oratorio:Station {name:'Oratório'})
 
@@ -57,6 +62,7 @@ CREATE
 CREATE (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Azul:Line {name:'Azul', type:'Metro', number: 1}),
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
+(Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
 
 
@@ -106,6 +112,9 @@ CREATE
 (AltoIpiranga)-[:Connect]->(Sacoma),
 (Sacoma)-[:Connect]->(Tamanduatei),
 (Tamanduatei)-[:Connect]->(VilaPrudente),
+// Jade Line
+(AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
+(GuarulhosCecap)-[:Connect]->(EngGoulart),
 //Silver Line
 (VilaPrudente)-[:Connect]->(Oratorio)
 
@@ -158,5 +167,8 @@ CREATE
 (Verde)-[:Has]->(Sacoma),
 (Verde)-[:Has]->(Tamanduatei),
 (Verde)-[:Has]->(VilaPrudente),
+(Jade)-[:Has]->(AeroportoGuarulhos)
+(Jade)-[:Has]->(GuarulhosCecap)
+(Jade)-[:Has]->(EngGoulart)
 (Prata)-[:Has]->(VilaPrudente),
 (Prata)-[:Has]->(Oratorio)

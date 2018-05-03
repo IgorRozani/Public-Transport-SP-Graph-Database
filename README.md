@@ -15,6 +15,6 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [ ] Linha 10 - Turquesa
 - [ ] Linha 11 - Coral
 - [ ] Linha 12 - Safira
-- [ ] Linha 13 - Jade
+- [x] Linha 13 - Jade
 - [x] Linha 15 - Prata
 
