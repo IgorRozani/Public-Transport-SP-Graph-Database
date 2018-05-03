@@ -6,7 +6,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 # Map Status
 - [x] Linha 1 - Azul
 - [x] Linha 2 - Verde
-- [ ] Linha 3 - Vermelha
+- [x] Linha 3 - Vermelha
 - [x] Linha 4 - Amarela
 - [ ] Linha 5 - Lilás
 - [ ] Linha 7 - Rubi

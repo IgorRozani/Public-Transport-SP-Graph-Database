@@ -34,8 +34,7 @@ CREATE
 (Conceicao:Station {name:'Conceição'}),
 (Jabaquara:Station {name:'Jabaquara'}),
 
-
-//Green Line Stations
+// Green Line Stations
 (VilaMadalena:Station {name: 'Vila Madalena'}),
 (Sumare:Station {name: 'Santuário Nossa senhora de Fátima - Sumaré'}),
 (Clinicas:Station {name: 'Clínicas'}),
@@ -48,12 +47,32 @@ CREATE
 (Tamanduatei:Station {name:'Tamanduateí'}),
 (VilaPrudente:Station {name:'Vila Prudente'}),
 
+// Red Line Stations
+(Corinthians:Station {name: 'Corinthians - Itaquera'}),
+(ArturAlvim:Station {name: 'Artur Alvim'}),
+(Patriarca:Station {name: 'Patriarca'}),
+(Guilhermina:Station {name: 'Guilermina - Esperança' }),
+(VilaMatilde:Station {name: 'Vila Matilde'}),
+(Penha:Station {name: 'Penha'}),
+(Carrao:Station {name: 'Carrão'}),
+(Tatuape:Station {name: 'Tatuapé'}),
+(Belem:Station {name:'Belém'}),
+(Mooca:Station {name:'Bresser - Mooca'}),
+(Bras:Station {name:'Brás'}),
+(PedroII:Station {name:'Pedro II'}),
+// Se
+(Anhangabau:Station {name:'Anhangabaú'}),
+// Republica
+(SantaCecilia:Station {name:'Santa Cecília'}),
+(MalDeodoro:Station {name:'Mal. Deodoro'}),
+(BarraFunda:Station {name:'Palmeiras - Barra Funda'}),
+
 // Jade Line Stations
 (AeroportoGuarulhos:Station {name: 'Aeroporto - Guarulhos'}),
 (GuarulhosCecap:Station {name:'Guarulhos - Cecap'}),
 (EngGoulart:Station {name:'Engenheiro Goulart'}),
 
-//Silver Line Stations
+// Silver Line Stations
 (Oratorio:Station {name:'Oratório'})
 
 
@@ -62,6 +81,7 @@ CREATE
 CREATE 
 (Azul:Line {name:'Azul', type:'Metro', number: 1}),
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
+(Vermelha:Line{name:'Vermelha', type:'Metro', number: 3}),
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
@@ -69,7 +89,7 @@ CREATE
 
 // Connection between stations
 CREATE
-//Yellow Line 
+// Yellow Line 
 (Butanta)-[:Connect]->(Pinheiros),
 (Pinheiros)-[:Connect]->(FariaLima),
 (FariaLima)-[:Connect]->(FradiqueCoutinho),
@@ -77,7 +97,7 @@ CREATE
 (Paulista)-[:Connect]->(Higienopolis),
 (Higienopolis)-[:Connect]->(Republica),
 (Republica)-[:Connect]->(Luz),
-//Blue Line
+// Blue Line
 (Tucuruvi)-[:Connect]->(ParadaInglesa),
 (ParadaInglesa)-[:Connect]->(JardimSaoPaulo),
 (JardimSaoPaulo)-[:Connect]->(Santana),
@@ -100,7 +120,7 @@ CREATE
 (Saude)-[:Connect]->(SaoJudas),
 (SaoJudas)-[:Connect]->(Conceicao),
 (Conceicao)-[:Connect]->(Jabaquara),
-//Green Line
+// Green Line
 (VilaMadalena)-[:Connect]->(Sumare),
 (Sumare)-[:Connect]->(Clinicas),
 (Clinicas)-[:Connect]->(Paulista),
@@ -113,10 +133,28 @@ CREATE
 (AltoIpiranga)-[:Connect]->(Sacoma),
 (Sacoma)-[:Connect]->(Tamanduatei),
 (Tamanduatei)-[:Connect]->(VilaPrudente),
+// Red Line
+(Corinthians)-[:Connect]->(ArturAlvim),
+(ArturAlvim)-[:Connect]->(Patriarca),
+(Patriarca)-[:Connect]->(Guilhermina),
+(Guilhermina)-[:Connect]->(VilaMatilde),
+(VilaMatilde)-[:Connect]->(Penha),
+(Penha)-[:Connect]->(Carrao),
+(Carrao)-[:Connect]->(Tatuape),
+(Tatuape)-[:Connect]->(Belem),
+(Belem)-[:Connect]->(Mooca),
+(Mooca)-[:Connect]->(Bras),
+(Bras)-[:Connect]->(PedroII),
+(PedroII)-[:Connect]->(Se),
+(Se)-[:Connect]->(Anhangabau),
+(Anhangabau)-[:Connect]->(Republica),
+(Republica)-[:Connect]->(SantaCecilia),
+(SantaCecilia)-[:Connect]->(MalDeodoro),
+(MalDeodoro)-[:Connect]->(BarraFunda),
 // Jade Line
 (AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
-//Silver Line
+// Silver Line
 (VilaPrudente)-[:Connect]->(Oratorio)
 
 
@@ -170,6 +208,24 @@ CREATE
 (Verde)-[:Has]->(Sacoma),
 (Verde)-[:Has]->(Tamanduatei),
 (Verde)-[:Has]->(VilaPrudente),
+
+(Vermelha)-[:Has]->(Corinthians),
+(Vermelha)-[:Has]->(ArturAlvim),
+(Vermelha)-[:Has]->(Patriarca),
+(Vermelha)-[:Has]->(Guilhermina),
+(Vermelha)-[:Has]->(VilaMatilde),
+(Vermelha)-[:Has]->(Penha),
+(Vermelha)-[:Has]->(Carrao),
+(Vermelha)-[:Has]->(Tatuape),
+(Vermelha)-[:Has]->(Belem),
+(Vermelha)-[:Has]->(Mooca),
+(Vermelha)-[:Has]->(Bras),
+(Vermelha)-[:Has]->(PedroII),
+(Vermelha)-[:Has]->(Se),
+(Vermelha)-[:Has]->(Anhangabau),
+(Vermelha)-[:Has]->(Republica),
+(Vermelha)-[:Has]->(SantaCecilia),
+(Vermelha)-[:Has]->(MalDeodoro),
 
 (Jade)-[:Has]->(AeroportoGuarulhos),
 (Jade)-[:Has]->(GuarulhosCecap),
