@@ -1,7 +1,7 @@
 # MetroSP-Graph-Database
 Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 
-![Alt text](img/map.png?raw=true "Map")
+![Map](img/map.png?raw=true "Map")
 
 # Map Status
 - [x] Linha 1 - Azul
