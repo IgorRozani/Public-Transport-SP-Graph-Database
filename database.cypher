@@ -59,9 +59,10 @@ CREATE
 
 
 // Lines
-CREATE (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
+CREATE 
 (Azul:Line {name:'Azul', type:'Metro', number: 1}),
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
+(Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
 
@@ -130,6 +131,7 @@ CREATE
 (Amarela)-[:Has]->(Republica),
 (Amarela)-[:Has]->(Luz),
 (Amarela)-[:Has]->(TrianonMasp),
+
 (Azul)-[:Has]->(Tucuruvi),
 (Azul)-[:Has]->(ParadaInglesa),
 (Azul)-[:Has]->(JardimSaoPaulo),
@@ -153,6 +155,7 @@ CREATE
 (Azul)-[:Has]->(SaoJudas),
 (Azul)-[:Has]->(Conceicao),
 (Azul)-[:Has]->(Jabaquara),
+
 (Verde)-[:Has]->(VilaMadalena),
 (Verde)-[:Has]->(Sumare),
 (Verde)-[:Has]->(Clinicas),
@@ -167,8 +170,10 @@ CREATE
 (Verde)-[:Has]->(Sacoma),
 (Verde)-[:Has]->(Tamanduatei),
 (Verde)-[:Has]->(VilaPrudente),
-(Jade)-[:Has]->(AeroportoGuarulhos)
-(Jade)-[:Has]->(GuarulhosCecap)
-(Jade)-[:Has]->(EngGoulart)
+
+(Jade)-[:Has]->(AeroportoGuarulhos),
+(Jade)-[:Has]->(GuarulhosCecap),
+(Jade)-[:Has]->(EngGoulart),
+
 (Prata)-[:Has]->(VilaPrudente),
 (Prata)-[:Has]->(Oratorio)
