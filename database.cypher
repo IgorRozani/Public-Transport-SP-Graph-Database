@@ -67,6 +67,21 @@ CREATE
 (MalDeodoro:Station {name:'Mal. Deodoro'}),
 (BarraFunda:Station {name:'Palmeiras - Barra Funda'}),
 
+// Safira Line Stations
+// Brás
+// Tatuapé
+// EngGoulart
+(USPLeste:Station {name: 'USP Leste'}),
+(Comendador:Station {name: 'Comendador Ermelino'}),
+(SaoMiguel:Station {name: 'São Miguel Paulista'}),
+(JardimHelena:Station {name:'Jardim Helena - Vila Mara'}),
+(ItaimPaulista:Station {name:'Itaim Paulista'}),
+(JardimRomano:Station {name:'Jardim Romano'}),
+(EngManoelFeio:Station {name: 'Engº Manoel Feio'}),
+(Itaquaquecetuba:Station {name:'Itaquaquecetuba'}),
+(Aracare:Station {name:'Aracaré'}),
+(CalmonViana:Station{name:'Calmon Viana'}),
+
 // Jade Line Stations
 (AeroportoGuarulhos:Station {name: 'Aeroporto - Guarulhos'}),
 (GuarulhosCecap:Station {name:'Guarulhos - Cecap'}),
@@ -83,6 +98,7 @@ CREATE
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
 (Vermelha:Line{name:'Vermelha', type:'Metro', number: 3}),
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
+(Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
 
@@ -151,6 +167,19 @@ CREATE
 (Republica)-[:Connect]->(SantaCecilia),
 (SantaCecilia)-[:Connect]->(MalDeodoro),
 (MalDeodoro)-[:Connect]->(BarraFunda),
+// Safira Line
+(Bras)-[:Connect]->(Tatuape),
+(Tatuape)-[:Connect]->(EngGoulart),
+(EngGoulart)-[:Connect]->(USPLeste),
+(USPLeste)-[:Connect]->(Comendador),
+(Comendador)-[:Connect]->(SaoMiguel),
+(SaoMiguel)-[:Connect]->(JardimHelena),
+(JardimHelena)-[:Connect]->(ItaimPaulista),
+(ItaimPaulista)-[:Connect]->(JardimRomano),
+(JardimRomano)-[:Connect]->(EngManoelFeio),
+(EngManoelFeio)-[:Connect]->(Itaquaquecetuba),
+(Itaquaquecetuba)-[:Connect]->(Aracare),
+(Aracare)-[:Connect]->(CalmonViana),
 // Jade Line
 (AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
@@ -226,6 +255,21 @@ CREATE
 (Vermelha)-[:Has]->(Republica),
 (Vermelha)-[:Has]->(SantaCecilia),
 (Vermelha)-[:Has]->(MalDeodoro),
+
+// Safira Line
+(Safira)-[:Has]->(Bras),
+(Safira)-[:Has]->(Tatuape),
+(Safira)-[:Has]->(EngGoulart),
+(Safira)-[:Has]->(USPLeste),
+(Safira)-[:Has]->(Comendador),
+(Safira)-[:Has]->(SaoMiguel),
+(Safira)-[:Has]->(JardimHelena),
+(Safira)-[:Has]->(ItaimPaulista),
+(Safira)-[:Has]->(JardimRomano),
+(Safira)-[:Has]->(EngManoelFeio),
+(Safira)-[:Has]->(Itaquaquecetuba),
+(Safira)-[:Has]->(Aracare),
+(Safira)-[:Has]->(CalmonViana),
 
 (Jade)-[:Has]->(AeroportoGuarulhos),
 (Jade)-[:Has]->(GuarulhosCecap),
