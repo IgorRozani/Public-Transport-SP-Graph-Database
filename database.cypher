@@ -129,8 +129,24 @@ CREATE
 (Piqueri:Station {name:'Piqueri'}),
 (Lapa:Station {name:'Lapa'}),
 (AguaBranca:Station {name:'Água Branca'}),
-// BarraFunda
-// Luz
+
+// Esmeralda Line Stations
+(Osasco:Station {name:'Osasco'}),
+(PresAltino:Station {name:'Pres. Altino'}),
+(Ceasa:Station {name:'Ceasa'}),
+(Jaguare:Station {name:'Villa-Lobos - Jaguaré'}),
+(CidadeUniversitaria:Station {name:'Cidade Universitária'}),
+(Reboucas:Station {name:'Hebraica - Rebouças'}),
+(CidadeJardim:Station {name:'Cidade Jardim'}),
+(VilaOlimpia:Station {name:'Vila Olímpia'}),
+(Berrini:Station {name:'Berrini'}),
+(Morumbi:Station {name:'Morumbi'}),
+(GranjaJulieta:Station {name:'Granja Julieta'}),
+(Socorro:Station {name:'Socorro'}),
+(Jurubatuba:Station {name:'Jurubatuba'}),
+(Autodromo:Station {name:'Autódromo'}),
+(Interlagos:Station {name:'Primavera - Interlagos'}),
+(Grajau:Station {name:'Grajaú'})
 
 
 
@@ -143,6 +159,7 @@ CREATE
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Lilas:Line {name:'Lilás', type:'Metro', number:5}),
 (Rubi:Line {name:'Rubi', type:'CPTM', number:7}),
+(Esmeralda:Line {name:'Esmeralda', type:'CPTM',number:9}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
@@ -226,7 +243,6 @@ CREATE
 (Maua)-[:Connect]->(Guapituba),
 (Guapituba)-[:Connect]->(RibeiraoPires),
 (RibeiraoPires)-[:Connect]->(RioGrandeSerra),
-
 // Safira Line
 (Bras)-[:Connect]->(Tatuape),
 (Tatuape)-[:Connect]->(EngGoulart),
@@ -240,7 +256,6 @@ CREATE
 (EngManoelFeio)-[:Connect]->(Itaquaquecetuba),
 (Itaquaquecetuba)-[:Connect]->(Aracare),
 (Aracare)-[:Connect]->(CalmonViana),
-
 // Jade Line
 (AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
@@ -275,8 +290,25 @@ CREATE
 (Piqueri)-[:Connect]->(Lapa),
 (Lapa)-[:Connect]->(AguaBranca),
 (AguaBranca)-[:Connect]->(BarraFunda),
-(BarraFunda)-[:Connect]->(Luz)
-
+(BarraFunda)-[:Connect]->(Luz),
+// Esmeralda
+(Osasco)-[:Connect]->(PresAltino),
+(PresAltino)-[:Connect]->(Ceasa),
+(Ceasa)-[:Connect]->(Jaguare),
+(Jaguare)-[:Connect]->(CidadeUniversitaria),
+(CidadeUniversitaria)-[:Connect]->(Pinheiros),
+(Pinheiros)-[:Connect]->(Reboucas),
+(Reboucas)-[:Connect]->(CidadeJardim),
+(CidadeJardim)-[:Connect]->(VilaOlimpia),
+(VilaOlimpia)-[:Connect]->(Berrini),
+(Berrini)-[:Connect]->(Morumbi),
+(Morumbi)-[:Connect]->(GranjaJulieta),
+(GranjaJulieta)-[:Connect]->(SantoAmaro),
+(SantoAmaro)-[:Connect]->(Socorro),
+(Socorro)-[:Connect]->(Jurubatuba),
+(Jurubatuba)-[:Connect]->(Autodromo),
+(Autodromo)-[:Connect]->(Interlagos),
+(Interlagos)-[:Connect]->(Grajau)
 
 
 // Line has Stations
@@ -413,4 +445,23 @@ CREATE
 (Rubi)-[:Has]->(Lapa),
 (Rubi)-[:Has]->(AguaBranca),
 (Rubi)-[:Has]->(BarraFunda),
-(Rubi)-[:Has]->(Luz)
+(Rubi)-[:Has]->(Luz),
+
+(Esmeralda-[:Has]->(Osasco),
+(Esmeralda-[:Has]->(PresAltino),
+(Esmeralda-[:Has]->(Ceasa),
+(Esmeralda-[:Has]->(Jaguare),
+(Esmeralda-[:Has]->(CidadeUniversitaria),
+(Esmeralda-[:Has]->(Pinheiros),
+(Esmeralda-[:Has]->(Reboucas),
+(Esmeralda-[:Has]->(CidadeJardim),
+(Esmeralda-[:Has]->(VilaOlimpia),
+(Esmeralda-[:Has]->(Berrini),
+(Esmeralda-[:Has]->(Morumbi),
+(Esmeralda-[:Has]->(GranjaJulieta),
+(Esmeralda-[:Has]->(SantoAmaro),
+(Esmeralda-[:Has]->(Socorro),
+(Esmeralda-[:Has]->(Jurubatuba),
+(Esmeralda-[:Has]->(Autodromo),
+(Esmeralda-[:Has]->(Interlagos),
+(Esmeralda-[:Has]->(Grajau)

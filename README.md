@@ -11,7 +11,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [x] Linha 5 - Lilás
 - [x] Linha 7 - Rubi
 - [ ] Linha 8 - Diamante
-- [ ] Linha 9 - Esmeralda
+- [x] Linha 9 - Esmeralda
 - [x] Linha 10 - Turquesa
 - [ ] Linha 11 - Coral
 - [x] Linha 12 - Safira
