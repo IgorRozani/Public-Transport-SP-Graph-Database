@@ -453,6 +453,7 @@ CREATE
 (Vermelha)-[:Has]->(Republica),
 (Vermelha)-[:Has]->(SantaCecilia),
 (Vermelha)-[:Has]->(MalDeodoro),
+(Vermelha)-[:Has]->(BarraFunda),
 
 (Turquesa)-[:Has]->(Bras),
 (Turquesa)-[:Has]->(Juventus),
