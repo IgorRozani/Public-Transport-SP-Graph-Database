@@ -115,7 +115,7 @@ CREATE
 // Rubi Line Stations
 (Jundiai:Station {name:'Jundiaí'}),
 (VarzeaPaulista:Station {name:'Vazea Paulista'}),
-(CampoLimpo:Station {name:'Campo Limpo Paulista'}),
+(CampoLimpoPaulista:Station {name:'Campo Limpo Paulista'}),
 (Botujuru:Station {name:'Botujuru'}),
 (FranciscoMorato:Station {name:'Francisco Morato'}),
 (BaltazarFidelis:Station {name:'Baltazar Fidélis'}),
@@ -161,7 +161,6 @@ CREATE
 (Estudantes:Station {name:'Estudates'}),
 // Diamante Line Stations
 (JulioPrestes:Station {name:'Julio Prestes'}),
-(Lapa:Station {name:'Lapa'}),
 (DomingosMoraes:Station {name:'Domingos de Moraes'}),
 (Leopoldina:Station {name:'Imperatriz Leopoldina'}),
 (ComSampaio:Station {name:'Com. Sampaio'}),
@@ -189,7 +188,7 @@ CREATE
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Lilas:Line {name:'Lilás', type:'Metro', number:5}),
 (Rubi:Line {name:'Rubi', type:'CPTM', number:7}),
-(Diamante:Line {name:'Diamante', type'CPTM', number:8}),
+(Diamante:Line {name:'Diamante', type:'CPTM', number:8}),
 (Esmeralda:Line {name:'Esmeralda', type:'CPTM',number:9}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Coral:Line {name:'Coral', type:'CPTM', number:11}),
@@ -307,8 +306,8 @@ CREATE
 (Eucaliptos)-[:Connect]->(Moema),
 // Rubi Line
 (Jundiai)-[:Connect]->(VarzeaPaulista),
-(VarzeaPaulista)-[:Connect]->(CampoLimpo),
-(CampoLimpo)-[:Connect]->(Botujuru),
+(VarzeaPaulista)-[:Connect]->(CampoLimpoPaulista),
+(CampoLimpoPaulista)-[:Connect]->(Botujuru),
 (Botujuru)-[:Connect]->(FranciscoMorato),
 (FranciscoMorato)-[:Connect]->(BaltazarFidelis),
 (BaltazarFidelis)-[:Connect]->(FrancoRocha),
@@ -499,7 +498,7 @@ CREATE
 
 (Rubi)-[:Has]->(Jundiai),
 (Rubi)-[:Has]->(VarzeaPaulista),
-(Rubi)-[:Has]->(CampoLimpo),
+(Rubi)-[:Has]->(CampoLimpoPaulista),
 (Rubi)-[:Has]->(Botujuru),
 (Rubi)-[:Has]->(FranciscoMorato),
 (Rubi)-[:Has]->(BaltazarFidelis),
