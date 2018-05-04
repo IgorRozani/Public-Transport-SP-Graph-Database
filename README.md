@@ -16,5 +16,5 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [x] Linha 11 - Coral
 - [x] Linha 12 - Safira
 - [x] Linha 13 - Jade
-- [x] Linha 15 - Prata
+- [ ] Linha 15 - Prata (33%)
 
