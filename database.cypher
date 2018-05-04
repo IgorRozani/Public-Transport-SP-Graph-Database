@@ -148,24 +148,37 @@ CREATE
 (Interlagos:Station {name:'Primavera - Interlagos'}),
 (Grajau:Station {name:'Grajaú'}),
 // Coral Line Stations
-// Luz
-// Bras
-// Tatuape
-// Corinthians
 (DomBosco:Station {name:'Dom Bosco'}),
 (JoseBonifacio:Station {name:'José Bonifácio'}),
 (Guaianases:Station {name:'Guaianases'}),
 (AntonioGianetti:Station {name:'Antonio Gioanetti Neto'}),
 (FerrazVasconcelos:Station {name:'Ferraz de Vasconcelos'}),
 (Poa:Station {name:'Poá'}),
-// Calmon Viana
 (Suzano:Station {name:'Suzano'}),
 (Jundiapeba:Station {name:'Jundiapeba'}),
 (BrazCubas:Station {name:'Braz Cubas'}),
 (MogiCruzes:Station {name:'Mogi das Cruzes'}),
-(Estudantes:Station {name:'Estudates'})
-
-
+(Estudantes:Station {name:'Estudates'}),
+// Diamante Line Stations
+(JulioPrestes:Station {name:'Julio Prestes'}),
+(Lapa:Station {name:'Lapa'}),
+(DomingosMoraes:Station {name:'Domingos de Moraes'}),
+(Leopoldina:Station {name:'Imperatriz Leopoldina'}),
+(ComSampaio:Station {name:'Com. Sampaio'}),
+(Quitauna:Station {name:'Quitaúna'}),
+(MiguelCosta:Station {name:'Gen. Miguel Costa'}),
+(Carapicuiba:Station {name:'Carapicuíba'}),
+(SantaTerezinha:Station {name:'Santa Terezinha'}),
+(AntonioJoao:Station {name:'Antonio João'}),
+(Barueri:Station {name:'Barueri'}),
+(JardimBelval:Station {name:'Jardim Belval'}),
+(JardimSilveira:Station {name:'Jardim Silveira'}),
+(Jandira:Station {name:'Jandira'}),
+(SagradoCoracao:Station {name:'Sagrado Coração'}),
+(EngCardoso:Station {name:'Engº Cardoso'}),
+(Itapevi:Station {name:'Itapevi'}),
+(SantaRita:Station {name:'Santa Rita'}),
+(AmadorBueno:Station {name:'Amador Bueno'})
 
 
 // Lines
@@ -176,6 +189,7 @@ CREATE
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Lilas:Line {name:'Lilás', type:'Metro', number:5}),
 (Rubi:Line {name:'Rubi', type:'CPTM', number:7}),
+(Diamante:Line {name:'Diamante', type'CPTM', number:8}),
 (Esmeralda:Line {name:'Esmeralda', type:'CPTM',number:9}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Coral:Line {name:'Coral', type:'CPTM', number:11}),
@@ -342,7 +356,28 @@ CREATE
 (Suzano)-[:Connect]->(Jundiapeba),
 (Jundiapeba)-[:Connect]->(BrazCubas),
 (BrazCubas)-[:Connect]->(MogiCruzes),
-(MogiCruzes)-[:Connect]->(Estudantes)
+(MogiCruzes)-[:Connect]->(Estudantes),
+// Diamante
+(JulioPrestes)-[:Connect]->(BarraFunda),
+(BarraFunda)-[:Connect]->(Lapa),
+(Lapa)-[:Connect]->(DomingosMoraes),
+(DomingosMoraes)-[:Connect]->(Leopoldina),
+(Leopoldina)-[:Connect]->(PresAltino),
+(Osasco)-[:Connect]->(ComSampaio),
+(ComSampaio)-[:Connect]->(Quitauna),
+(Quitauna)-[:Connect]->(MiguelCosta),
+(MiguelCosta)-[:Connect]->(Carapicuiba),
+(Carapicuiba)-[:Connect]->(SantaTerezinha),
+(SantaTerezinha)-[:Connect]->(AntonioJoao),
+(AntonioJoao)-[:Connect]->(Barueri),
+(Barueri)-[:Connect]->(JardimBelval),
+(JardimBelval)-[:Connect]->(JardimSilveira),
+(JardimSilveira)-[:Connect]->(Jandira),
+(Jandira)-[:Connect]->(SagradoCoracao),
+(SagradoCoracao)-[:Connect]->(EngCardoso),
+(EngCardoso)-[:Connect]->(Itapevi),
+(Itapevi)-[:Connect]->(SantaRita),
+(SantaRita)-[:Connect]->(AmadorBueno)
 
 
 // Line has Stations
@@ -515,4 +550,27 @@ CREATE
 (Coral)-[:Has]->(Jundiapeba),
 (Coral)-[:Has]->(BrazCubas),
 (Coral)-[:Has]->(MogiCruzes),
-(Coral)-[:Has]->(Estudantes)
+(Coral)-[:Has]->(Estudantes),
+
+(Diamante)-[:Has]->(JulioPrestes),
+(Diamante)-[:Has]->(BarraFunda),
+(Diamante)-[:Has]->(Lapa),
+(Diamante)-[:Has]->(DomingosMoraes),
+(Diamante)-[:Has]->(Leopoldina),
+(Diamante)-[:Has]->(PresAltino),
+(Diamante)-[:Has]->(Osasco),
+(Diamante)-[:Has]->(ComSampaio),
+(Diamante)-[:Has]->(Quitauna),
+(Diamante)-[:Has]->(MiguelCosta),
+(Diamante)-[:Has]->(Carapicuiba),
+(Diamante)-[:Has]->(SantaTerezinha),
+(Diamante)-[:Has]->(AntonioJoao),
+(Diamante)-[:Has]->(Barueri),
+(Diamante)-[:Has]->(JardimBelval),
+(Diamante)-[:Has]->(JardimSilveira),
+(Diamante)-[:Has]->(Jandira),
+(Diamante)-[:Has]->(SagradoCoracao),
+(Diamante)-[:Has]->(EngCardoso),
+(Diamante)-[:Has]->(Itapevi),
+(Diamante)-[:Has]->(SantaRita),
+(Diamante)-[:Has]->(AmadorBueno)
