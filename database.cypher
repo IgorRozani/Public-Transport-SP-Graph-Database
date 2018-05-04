@@ -146,7 +146,24 @@ CREATE
 (Jurubatuba:Station {name:'Jurubatuba'}),
 (Autodromo:Station {name:'Autódromo'}),
 (Interlagos:Station {name:'Primavera - Interlagos'}),
-(Grajau:Station {name:'Grajaú'})
+(Grajau:Station {name:'Grajaú'}),
+// Coral Line Stations
+// Luz
+// Bras
+// Tatuape
+// Corinthians
+(DomBosco:Station {name:'Dom Bosco'}),
+(JoseBonifacio:Station {name:'José Bonifácio'}),
+(Guaianases:Station {name:'Guaianases'}),
+(AntonioGianetti:Station {name:'Antonio Gioanetti Neto'}),
+(FerrazVasconcelos:Station {name:'Ferraz de Vasconcelos'}),
+(Poa:Station {name:'Poá'}),
+// Calmon Viana
+(Suzano:Station {name:'Suzano'}),
+(Jundiapeba:Station {name:'Jundiapeba'}),
+(BrazCubas:Station {name:'Braz Cubas'}),
+(MogiCruzes:Station {name:'Mogi das Cruzes'}),
+(Estudantes:Station {name:'Estudates'})
 
 
 
@@ -161,6 +178,7 @@ CREATE
 (Rubi:Line {name:'Rubi', type:'CPTM', number:7}),
 (Esmeralda:Line {name:'Esmeralda', type:'CPTM',number:9}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
+(Coral:Line {name:'Coral', type:'CPTM', number:11}),
 (Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
@@ -308,7 +326,23 @@ CREATE
 (Socorro)-[:Connect]->(Jurubatuba),
 (Jurubatuba)-[:Connect]->(Autodromo),
 (Autodromo)-[:Connect]->(Interlagos),
-(Interlagos)-[:Connect]->(Grajau)
+(Interlagos)-[:Connect]->(Grajau),
+// Coral
+(Luz)-[:Connect]->(Bras),
+(Bras)-[:Connect]->(Tatuape),
+(Tatuape)-[:Connect]->(Corinthians),
+(Corinthians)-[:Connect]->(DomBosco),
+(DomBosco)-[:Connect]->(JoseBonifacio),
+(JoseBonifacio)-[:Connect]->(Guaianases),
+(Guaianases)-[:Connect]->(AntonioGianetti),
+(AntonioGianetti)-[:Connect]->(FerrazVasconcelos),
+(FerrazVasconcelos)-[:Connect]->(Poa),
+(Poa)-[:Connect]->(CalmonViana),
+(CalmonViana)-[:Connect]->(Suzano),
+(Suzano)-[:Connect]->(Jundiapeba),
+(Jundiapeba)-[:Connect]->(BrazCubas),
+(BrazCubas)-[:Connect]->(MogiCruzes),
+(MogiCruzes)-[:Connect]->(Estudantes)
 
 
 // Line has Stations
@@ -447,21 +481,38 @@ CREATE
 (Rubi)-[:Has]->(BarraFunda),
 (Rubi)-[:Has]->(Luz),
 
-(Esmeralda-[:Has]->(Osasco),
-(Esmeralda-[:Has]->(PresAltino),
-(Esmeralda-[:Has]->(Ceasa),
-(Esmeralda-[:Has]->(Jaguare),
-(Esmeralda-[:Has]->(CidadeUniversitaria),
-(Esmeralda-[:Has]->(Pinheiros),
-(Esmeralda-[:Has]->(Reboucas),
-(Esmeralda-[:Has]->(CidadeJardim),
-(Esmeralda-[:Has]->(VilaOlimpia),
-(Esmeralda-[:Has]->(Berrini),
-(Esmeralda-[:Has]->(Morumbi),
-(Esmeralda-[:Has]->(GranjaJulieta),
-(Esmeralda-[:Has]->(SantoAmaro),
-(Esmeralda-[:Has]->(Socorro),
-(Esmeralda-[:Has]->(Jurubatuba),
-(Esmeralda-[:Has]->(Autodromo),
-(Esmeralda-[:Has]->(Interlagos),
-(Esmeralda-[:Has]->(Grajau)
+(Esmeralda)-[:Has]->(Osasco),
+(Esmeralda)-[:Has]->(PresAltino),
+(Esmeralda)-[:Has]->(Ceasa),
+(Esmeralda)-[:Has]->(Jaguare),
+(Esmeralda)-[:Has]->(CidadeUniversitaria),
+(Esmeralda)-[:Has]->(Pinheiros),
+(Esmeralda)-[:Has]->(Reboucas),
+(Esmeralda)-[:Has]->(CidadeJardim),
+(Esmeralda)-[:Has]->(VilaOlimpia),
+(Esmeralda)-[:Has]->(Berrini),
+(Esmeralda)-[:Has]->(Morumbi),
+(Esmeralda)-[:Has]->(GranjaJulieta),
+(Esmeralda)-[:Has]->(SantoAmaro),
+(Esmeralda)-[:Has]->(Socorro),
+(Esmeralda)-[:Has]->(Jurubatuba),
+(Esmeralda)-[:Has]->(Autodromo),
+(Esmeralda)-[:Has]->(Interlagos),
+(Esmeralda)-[:Has]->(Grajau),
+
+(Coral)-[:Has]->(Luz),
+(Coral)-[:Has]->(Bras),
+(Coral)-[:Has]->(Tatuape),
+(Coral)-[:Has]->(Corinthians),
+(Coral)-[:Has]->(DomBosco),
+(Coral)-[:Has]->(JoseBonifacio),
+(Coral)-[:Has]->(Guaianases),
+(Coral)-[:Has]->(AntonioGianetti),
+(Coral)-[:Has]->(FerrazVasconcelos),
+(Coral)-[:Has]->(Poa),
+(Coral)-[:Has]->(CalmonViana),
+(Coral)-[:Has]->(Suzano),
+(Coral)-[:Has]->(Jundiapeba),
+(Coral)-[:Has]->(BrazCubas),
+(Coral)-[:Has]->(MogiCruzes),
+(Coral)-[:Has]->(Estudantes)

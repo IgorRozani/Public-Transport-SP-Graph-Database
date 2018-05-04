@@ -13,7 +13,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [ ] Linha 8 - Diamante
 - [x] Linha 9 - Esmeralda
 - [x] Linha 10 - Turquesa
-- [ ] Linha 11 - Coral
+- [x] Linha 11 - Coral
 - [x] Linha 12 - Safira
 - [x] Linha 13 - Jade
 - [x] Linha 15 - Prata
