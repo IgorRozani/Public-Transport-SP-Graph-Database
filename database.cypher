@@ -110,7 +110,27 @@ CREATE
 (BorbaGato:Station {name:'Borba Gato'}),
 (Brooklin:Station {name:'Brooklin'}),
 (Eucaliptos:Station {name:'Eucaliptos'}),
-(Moema:Station {name:'Moema'})
+(Moema:Station {name:'Moema'}),
+
+// Rubi Line Stations
+(Jundiai:Station {name:'Jundiaí'}),
+(VarzeaPaulista:Station {name:'Vazea Paulista'}),
+(CampoLimpo:Station {name:'Campo Limpo Paulista'}),
+(Botujuru:Station {name:'Botujuru'}),
+(FranciscoMorato:Station {name:'Francisco Morato'}),
+(BaltazarFidelis:Station {name:'Baltazar Fidélis'}),
+(FrancoRocha:Station {name:'Franco da Rocha'}),
+(Caieiras:Station {name:'Caieiras'}),
+(Perus:Station {name:'Perus'}),
+(VilaAurora:Station {name:'Vila Aurora'}),
+(Jaragua:Station {name:'Jaraguá'}),
+(VilaClarice:Station {name:'Vila Clarice'}),
+(Pirituba:Station {name:'Pirituba'}),
+(Piqueri:Station {name:'Piqueri'}),
+(Lapa:Station {name:'Lapa'}),
+(AguaBranca:Station {name:'Água Branca'}),
+// BarraFunda
+// Luz
 
 
 
@@ -122,6 +142,7 @@ CREATE
 (Vermelha:Line{name:'Vermelha', type:'Metro', number: 3}),
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
 (Lilas:Line {name:'Lilás', type:'Metro', number:5}),
+(Rubi:Line {name:'Rubi', type:'CPTM', number:7}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
@@ -236,7 +257,25 @@ CREATE
 (AltoBoaVista)-[:Connect]->(BorbaGato),
 (BorbaGato)-[:Connect]->(Brooklin),
 (Brooklin)-[:Connect]->(Eucaliptos),
-(Eucaliptos)-[:Connect]->(Moema)
+(Eucaliptos)-[:Connect]->(Moema),
+// Rubi Line
+(Jundiai)-[:Connect]->(VarzeaPaulista),
+(VarzeaPaulista)-[:Connect]->(CampoLimpo),
+(CampoLimpo)-[:Connect]->(Botujuru),
+(Botujuru)-[:Connect]->(FranciscoMorato),
+(FranciscoMorato)-[:Connect]->(BaltazarFidelis),
+(BaltazarFidelis)-[:Connect]->(FrancoRocha),
+(FrancoRocha)-[:Connect]->(Caieiras),
+(Caieiras)-[:Connect]->(Perus),
+(Perus)-[:Connect]->(VilaAurora),
+(VilaAurora)-[:Connect]->(Jaragua),
+(Jaragua)-[:Connect]->(VilaClarice),
+(VilaClarice)-[:Connect]->(Pirituba),
+(Pirituba)-[:Connect]->(Piqueri),
+(Piqueri)-[:Connect]->(Lapa),
+(Lapa)-[:Connect]->(AguaBranca),
+(AguaBranca)-[:Connect]->(BarraFunda),
+(BarraFunda)-[:Connect]->(Luz)
 
 
 
@@ -355,4 +394,23 @@ CREATE
 (Lilas)-[:Has]->(BorbaGato),
 (Lilas)-[:Has]->(Brooklin),
 (Lilas)-[:Has]->(Eucaliptos),
-(Lilas)-[:Has]->(Moema)
+(Lilas)-[:Has]->(Moema),
+
+(Rubi)-[:Has]->(Jundiai),
+(Rubi)-[:Has]->(VarzeaPaulista),
+(Rubi)-[:Has]->(CampoLimpo),
+(Rubi)-[:Has]->(Botujuru),
+(Rubi)-[:Has]->(FranciscoMorato),
+(Rubi)-[:Has]->(BaltazarFidelis),
+(Rubi)-[:Has]->(FrancoRocha),
+(Rubi)-[:Has]->(Caieiras),
+(Rubi)-[:Has]->(Perus),
+(Rubi)-[:Has]->(VilaAurora),
+(Rubi)-[:Has]->(Jaragua),
+(Rubi)-[:Has]->(VilaClarice),
+(Rubi)-[:Has]->(Pirituba),
+(Rubi)-[:Has]->(Piqueri),
+(Rubi)-[:Has]->(Lapa),
+(Rubi)-[:Has]->(AguaBranca),
+(Rubi)-[:Has]->(BarraFunda),
+(Rubi)-[:Has]->(Luz)

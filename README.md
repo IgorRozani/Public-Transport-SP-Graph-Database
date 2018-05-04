@@ -9,7 +9,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [x] Linha 3 - Vermelha
 - [x] Linha 4 - Amarela
 - [x] Linha 5 - Lilás
-- [ ] Linha 7 - Rubi
+- [x] Linha 7 - Rubi
 - [ ] Linha 8 - Diamante
 - [ ] Linha 9 - Esmeralda
 - [x] Linha 10 - Turquesa
