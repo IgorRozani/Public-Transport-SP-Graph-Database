@@ -60,18 +60,14 @@ CREATE
 (Mooca:Station {name:'Bresser - Mooca'}),
 (Bras:Station {name:'Brás'}),
 (PedroII:Station {name:'Pedro II'}),
-// Se
 (Anhangabau:Station {name:'Anhangabaú'}),
-// Republica
 (SantaCecilia:Station {name:'Santa Cecília'}),
 (MalDeodoro:Station {name:'Mal. Deodoro'}),
 (BarraFunda:Station {name:'Palmeiras - Barra Funda'}),
 
 // Turquesa Line Stations
-// Bras
 (Juventus:Station {name:'Juventus - Mooca'}),
 (Ipiranga:Station {name:'Ipiranga'}),
-// Tamanduatei
 (SaoCaetanoSul:Station {name: 'São Caetano do Sul'}),
 (Utinga:Station {name: 'Utinga'}),
 (PrefeitoSaladino:Station {name:'Prefeito Saladino'}),
@@ -83,9 +79,6 @@ CREATE
 (RioGrandeSerra:Station {name:'Rio Grande da Serra'}),
 
 // Safira Line Stations
-// Brás
-// Tatuapé
-// EngGoulart
 (USPLeste:Station {name: 'USP Leste'}),
 (Comendador:Station {name: 'Comendador Ermelino'}),
 (SaoMiguel:Station {name: 'São Miguel Paulista'}),
@@ -103,7 +96,22 @@ CREATE
 (EngGoulart:Station {name:'Engenheiro Goulart'}),
 
 // Silver Line Stations
-(Oratorio:Station {name:'Oratório'})
+(Oratorio:Station {name:'Oratório'}),
+
+// Lilás Line Stations
+(CapaoRedondo:Station {name:'Capão Redondo'}),
+(CampoLimpo:Station {name:'Campo Limpo'}),
+(VilaBelezas:Station {name:'Vila das Belezas'}),
+(GiovanniGronchi:Station {name:'Giovanni Gronchi'}),
+(SantoAmaro:Station {name:'Santo Amaro'}),
+(LargoTreze:Station {name:'Largo Treze'}),
+(AdolphoPinheiro:Station {name:'Adolpho Pinheiro'}),
+(AltoBoaVista:Station {name:'Alto da Boa Vista'}),
+(BorbaGato:Station {name:'Borba Gato'}),
+(Brooklin:Station {name:'Brooklin'}),
+(Eucaliptos:Station {name:'Eucaliptos'}),
+(Moema:Station {name:'Moema'})
+
 
 
 
@@ -113,6 +121,7 @@ CREATE
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
 (Vermelha:Line{name:'Vermelha', type:'Metro', number: 3}),
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
+(Lilas:Line {name:'Lilás', type:'Metro', number:5}),
 (Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
@@ -215,7 +224,20 @@ CREATE
 (AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
 // Silver Line
-(VilaPrudente)-[:Connect]->(Oratorio)
+(VilaPrudente)-[:Connect]->(Oratorio),
+// Lilás Line
+(CapaoRedondo)-[:Connect]->(CampoLimpo),
+(CampoLimpo)-[:Connect]->(VilaBelezas),
+(VilaBelezas)-[:Connect]->(GiovanniGronchi),
+(GiovanniGronchi)-[:Connect]->(SantoAmaro),
+(SantoAmaro)-[:Connect]->(LargoTreze),
+(LargoTreze)-[:Connect]->(AdolphoPinheiro),
+(AdolphoPinheiro)-[:Connect]->(AltoBoaVista),
+(AltoBoaVista)-[:Connect]->(BorbaGato),
+(BorbaGato)-[:Connect]->(Brooklin),
+(Brooklin)-[:Connect]->(Eucaliptos),
+(Eucaliptos)-[:Connect]->(Moema)
+
 
 
 // Line has Stations
@@ -320,4 +342,17 @@ CREATE
 (Jade)-[:Has]->(EngGoulart),
 
 (Prata)-[:Has]->(VilaPrudente),
-(Prata)-[:Has]->(Oratorio)
+(Prata)-[:Has]->(Oratorio),
+
+(Lilas)-[:Has]->(CapaoRedondo),
+(Lilas)-[:Has]->(CampoLimpo),
+(Lilas)-[:Has]->(VilaBelezas),
+(Lilas)-[:Has]->(GiovanniGronchi),
+(Lilas)-[:Has]->(SantoAmaro),
+(Lilas)-[:Has]->(LargoTreze),
+(Lilas)-[:Has]->(AdolphoPinheiro),
+(Lilas)-[:Has]->(AltoBoaVista),
+(Lilas)-[:Has]->(BorbaGato),
+(Lilas)-[:Has]->(Brooklin),
+(Lilas)-[:Has]->(Eucaliptos),
+(Lilas)-[:Has]->(Moema)

@@ -8,7 +8,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [x] Linha 2 - Verde
 - [x] Linha 3 - Vermelha
 - [x] Linha 4 - Amarela
-- [ ] Linha 5 - Lilás
+- [x] Linha 5 - Lilás
 - [ ] Linha 7 - Rubi
 - [ ] Linha 8 - Diamante
 - [ ] Linha 9 - Esmeralda
