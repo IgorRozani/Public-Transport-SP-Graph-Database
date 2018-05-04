@@ -67,6 +67,21 @@ CREATE
 (MalDeodoro:Station {name:'Mal. Deodoro'}),
 (BarraFunda:Station {name:'Palmeiras - Barra Funda'}),
 
+// Turquesa Line Stations
+// Bras
+(Juventus:Station {name:'Juventus - Mooca'}),
+(Ipiranga:Station {name:'Ipiranga'}),
+// Tamanduatei
+(SaoCaetanoSul:Station {name: 'São Caetano do Sul'}),
+(Utinga:Station {name: 'Utinga'}),
+(PrefeitoSaladino:Station {name:'Prefeito Saladino'}),
+(SantoAndre:Station {name:'Santo André'}),
+(Capuava:Station {name:'Capuava'}),
+(Maua:Station {name:'Mauá'}),
+(Guapituba:Station {name:'Guapituba'}),
+(RibeiraoPires:Station {name:'Ribeirão Pires'}),
+(RioGrandeSerra:Station {name:'Rio Grande da Serra'}),
+
 // Safira Line Stations
 // Brás
 // Tatuapé
@@ -98,6 +113,7 @@ CREATE
 (Verde:Line {name: 'Verde', type:'Metro', number: 2}),
 (Vermelha:Line{name:'Vermelha', type:'Metro', number: 3}),
 (Amarela:Line {name: 'Amarela', type:'Metro', number: 4}),
+(Turquesa:Line {name:'Turquesa', type:'CPTM', number: 10}),
 (Safira:Line {name:'Safira',type:'CPTM', number:12}),
 (Jade:Line {name: 'Jade', type:'CPTM', number: 13}),
 (Prata:Line {name: 'Prata', type:'Metro', number: 15})
@@ -167,6 +183,20 @@ CREATE
 (Republica)-[:Connect]->(SantaCecilia),
 (SantaCecilia)-[:Connect]->(MalDeodoro),
 (MalDeodoro)-[:Connect]->(BarraFunda),
+// Turquesa Line
+(Bras)-[:Connect]->(Juventus),
+(Juventus)-[:Connect]->(Ipiranga),
+(Ipiranga)-[:Connect]->(Tamanduatei),
+(Tamanduatei)-[:Connect]->(SaoCaetanoSul),
+(SaoCaetanoSul)-[:Connect]->(Utinga),
+(Utinga)-[:Connect]->(PrefeitoSaladino),
+(PrefeitoSaladino)-[:Connect]->(SantoAndre),
+(SantoAndre)-[:Connect]->(Capuava),
+(Capuava)-[:Connect]->(Maua),
+(Maua)-[:Connect]->(Guapituba),
+(Guapituba)-[:Connect]->(RibeiraoPires),
+(RibeiraoPires)-[:Connect]->(RioGrandeSerra),
+
 // Safira Line
 (Bras)-[:Connect]->(Tatuape),
 (Tatuape)-[:Connect]->(EngGoulart),
@@ -180,6 +210,7 @@ CREATE
 (EngManoelFeio)-[:Connect]->(Itaquaquecetuba),
 (Itaquaquecetuba)-[:Connect]->(Aracare),
 (Aracare)-[:Connect]->(CalmonViana),
+
 // Jade Line
 (AeroportoGuarulhos)-[:Connect]->(GuarulhosCecap),
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
@@ -256,7 +287,20 @@ CREATE
 (Vermelha)-[:Has]->(SantaCecilia),
 (Vermelha)-[:Has]->(MalDeodoro),
 
-// Safira Line
+(Turquesa)-[:Has]->(Bras),
+(Turquesa)-[:Has]->(Juventus),
+(Turquesa)-[:Has]->(Ipiranga),
+(Turquesa)-[:Has]->(Tamanduatei),
+(Turquesa)-[:Has]->(SaoCaetanoSul),
+(Turquesa)-[:Has]->(Utinga),
+(Turquesa)-[:Has]->(PrefeitoSaladino),
+(Turquesa)-[:Has]->(SantoAndre),
+(Turquesa)-[:Has]->(Capuava),
+(Turquesa)-[:Has]->(Maua),
+(Turquesa)-[:Has]->(Guapituba),
+(Turquesa)-[:Has]->(RibeiraoPires),
+(Turquesa)-[:Has]->(RioGrandeSerra),
+
 (Safira)-[:Has]->(Bras),
 (Safira)-[:Has]->(Tatuape),
 (Safira)-[:Has]->(EngGoulart),

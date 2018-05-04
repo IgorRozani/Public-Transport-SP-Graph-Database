@@ -12,7 +12,7 @@ Rede de transporte metropolitano da cidade de São Paulo em Neo4j.
 - [ ] Linha 7 - Rubi
 - [ ] Linha 8 - Diamante
 - [ ] Linha 9 - Esmeralda
-- [ ] Linha 10 - Turquesa
+- [x] Linha 10 - Turquesa
 - [ ] Linha 11 - Coral
 - [x] Linha 12 - Safira
 - [x] Linha 13 - Jade
