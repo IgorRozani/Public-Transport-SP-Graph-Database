@@ -97,6 +97,10 @@ CREATE
 
 // Silver Line Stations
 (Oratorio:Station {name:'Oratório'}),
+(SaoLucas:Station {name:'São Lucas'}),
+(CamiloHaddad:Station {name:'Camilo Haddad'}),
+(VilaTolstoi:Station {name:'Vila Tolstói'}),
+(VilaUniao:Station {name:'Vila União'}),
 
 // Lilás Line Stations
 (CapaoRedondo:Station {name:'Capão Redondo'}),
@@ -111,7 +115,6 @@ CREATE
 (Brooklin:Station {name:'Brooklin'}),
 (Eucaliptos:Station {name:'Eucaliptos'}),
 (Moema:Station {name:'Moema'}),
-
 // Rubi Line Stations
 (Jundiai:Station {name:'Jundiaí'}),
 (VarzeaPaulista:Station {name:'Vazea Paulista'}),
@@ -129,7 +132,6 @@ CREATE
 (Piqueri:Station {name:'Piqueri'}),
 (Lapa:Station {name:'Lapa'}),
 (AguaBranca:Station {name:'Água Branca'}),
-
 // Esmeralda Line Stations
 (Osasco:Station {name:'Osasco'}),
 (PresAltino:Station {name:'Pres. Altino'}),
@@ -292,6 +294,10 @@ CREATE
 (GuarulhosCecap)-[:Connect]->(EngGoulart),
 // Silver Line
 (VilaPrudente)-[:Connect]->(Oratorio),
+(Oratorio)-[:Connect]->(SaoLucas),
+(SaoLucas)-[:Connect]->(CamiloHaddad),
+(CamiloHaddad)-[:Connect]->(VilaTolstoi),
+(VilaTolstoi)-[:Connect]->(VilaUniao),
 // Lilás Line
 (CapaoRedondo)-[:Connect]->(CampoLimpo),
 (CampoLimpo)-[:Connect]->(VilaBelezas),
@@ -482,6 +488,10 @@ CREATE
 
 (Prata)-[:Has]->(VilaPrudente),
 (Prata)-[:Has]->(Oratorio),
+(Prata)-[:Has]->(SaoLucas),
+(Prata)-[:Has]->(CamiloHaddad),
+(Prata)-[:Has]->(VilaTolstoi),
+(Prata)-[:Has]->(VilaUniao),
 
 (Lilas)-[:Has]->(CapaoRedondo),
 (Lilas)-[:Has]->(CampoLimpo),
