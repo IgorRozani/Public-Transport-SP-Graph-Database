@@ -3,7 +3,7 @@ CREATE
 // Yellow Line Stations
 (Butanta:Station {name: 'Butantã'}),
 (Pinheiros:Station {name: 'Pinheiros'}),
-(FariaLima:Station {name: 'FariaLima'}),
+(FariaLima:Station {name: 'Faria Lima'}),
 (FradiqueCoutinho:Station {name: 'Fradique Coutinho'}),
 (OscarFreire:Station {name:'Oscar Freire'}),
 (Paulista:Station {name:'Paulista - Consolação' }),
