@@ -350,7 +350,6 @@ CREATE
 (Interlagos)-[:Connect{transport: 'train'}]->(Grajau),
 // Coral
 (Luz)-[:Connect{transport: 'train'}]->(Bras),
-(Bras)-[:Connect{transport: 'train'}]->(Tatuape),
 (Tatuape)-[:Connect{transport: 'train'}]->(Corinthians),
 (Corinthians)-[:Connect{transport: 'train'}]->(DomBosco),
 (DomBosco)-[:Connect{transport: 'train'}]->(JoseBonifacio),
