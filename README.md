@@ -4,6 +4,8 @@ Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (ima
 
 ![Map](img/map.png?raw=true "Map")
 
+Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
+
 ## Linhas mapeadas
 - [x] Linha 1 - Azul
 - [x] Linha 2 - Verde
