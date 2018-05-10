@@ -1,4 +1,4 @@
-# Public Transport SP Graph Database
+# Public Transport SP - Graph Database
 
 Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (imagem abaixo), mapeei todas as estações, linhas e conexões utilizando o banco NoSQL de grafos, utilizando o banco Neo4j.
 
