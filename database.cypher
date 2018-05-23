@@ -42,7 +42,7 @@ CREATE
 (TrianonMasp:Station {name: 'Trianon-Masp', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false }),
 (Brigadeiro:Station {name:'Brigadeiro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (ChacaraKlabin:Station {name: 'Chácara Klabin', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
-(Santos:Station {name:'Santos Imigrantes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: true}),
+(Santos:Station {name:'Santos Imigrantes', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: true}),
 (AltoIpiranga:Station {name:'Alto do Ipiranga', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (Sacoma:Station {name:'Sacomã', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (Tamanduatei:Station {name:'Tamanduateí', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
