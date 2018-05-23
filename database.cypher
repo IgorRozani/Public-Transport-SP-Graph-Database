@@ -17,7 +17,7 @@ CREATE
 (JardimSaoPaulo:Station {name:'Jardim São Paulo - Ayrton Senna', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (Santana:Station {name:'Santana', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (Carandiru:Station {name:'Carandiru', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
-(Tiete:Station {name:'Portuguesa - Tietê', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
+(Tiete:Station {name:'Portuguesa - Tietê', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: true, hasAirport:false, hasCarParking: false}),
 (Armenia:Station {name:'Armênia', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (Tiradentes:Station {name:'Tiradentes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
 (SaoBento:Station{name:'São Bento', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false}),
