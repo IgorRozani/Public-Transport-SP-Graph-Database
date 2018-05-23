@@ -24,7 +24,7 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [ ] Ponte ORCA
 - [ ] Corredor metropolitano de ônibus
 - [ ] Conexões pagas
-- [ ] Pontos de interesse
+- [x] Pontos de interesse
 
 ## Exemplos
 
