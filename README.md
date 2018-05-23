@@ -26,6 +26,16 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [ ] Conexões pagas
 - [x] Pontos de interesse
 
+## Estrutura do banco
+
+O banco é composto dos seguintes nós:
+- Station
+- Line
+
+E dos seguintes relacionamentos:
+- Connect
+- Has
+
 ## Exemplos
 
 ### Criação
@@ -66,6 +76,13 @@ RETURN n
 
 ```
 MATCH (:Line{name:'Jade'})-[:Has]-(s:Station)
+RETURN s
+```
+
+#### Todas as estações que possuem terminal rodoviário
+
+```
+MATCH (s:Station {hasRoadTerminal:true})
 RETURN s
 ```
 
