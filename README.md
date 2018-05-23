@@ -103,6 +103,15 @@ RETURN l.number, l.name, qtd
 ORDER BY l.number
 ```
 
+#### Quantidade de estações que possuem bicicletário ou paraciclos
+
+```
+MATCH (s:Station)
+WHERE s.hasBikeParkingTerminal OR s.hasBikeAttachingPost
+WITH count(s) as qtd
+RETURN qtd
+```
+
 #### Todas as estações que estão em mais de uma linha
 
 ```
