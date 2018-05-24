@@ -616,7 +616,6 @@ CREATE
 (MetropolitanBusCorridorABD)-[:Has]->(Morumbi),
 (MetropolitanBusCorridorABD)-[:Has]->(Diadema),
 (MetropolitanBusCorridorABD)-[:Has]->(Jabaquara),
-(MetropolitanBusCorridorABD)-[:Has]->(Zoologico),
 (MetropolitanBusCorridorABD)-[:Has]->(Piraporinha),
 (MetropolitanBusCorridorABD)-[:Has]->(SaoBernardo),
 (MetropolitanBusCorridorABD)-[:Has]->(Ferrazopolis),
