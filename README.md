@@ -21,8 +21,7 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Linha 13 - Jade
 - [x] Linha 15 - Prata
 - [ ] Expresso turístico
-- [ ] Ponte ORCA
-- [ ] Corredor metropolitano de ônibus
+- [x] Corredor metropolitano de ônibus
 - [ ] Conexões pagas
 - [x] Pontos de interesse
 
