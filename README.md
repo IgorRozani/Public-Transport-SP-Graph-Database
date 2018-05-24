@@ -6,7 +6,7 @@ Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (ima
 
 Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
 
-## Linhas mapeadas
+## Itens mapeados
 - [x] Linha 1 - Azul
 - [x] Linha 2 - Verde
 - [x] Linha 3 - Vermelha
@@ -20,10 +20,15 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Linha 12 - Safira
 - [x] Linha 13 - Jade
 - [x] Linha 15 - Prata
-- [ ] Expresso turístico
+- [x] Expresso turístico
 - [x] Corredor metropolitano de ônibus
-- [ ] Conexões pagas
 - [x] Pontos de interesse
+
+## Itens não mapeados
+- Cobrança entre terminais
+- Ponte ORCA
+- Estações de acesso livre
+- Empresas
 
 ## Estrutura do banco
 
