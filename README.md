@@ -23,12 +23,12 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Expresso turístico
 - [x] Corredor metropolitano de ônibus
 - [x] Pontos de interesse
+- [x] Empresas
+- [x] Ponte ORCA
 
 ## Itens não mapeados
 - Cobrança entre terminais
-- Ponte ORCA
 - Estações de acesso livre
-- Empresas
 
 ## Estrutura do banco
 
