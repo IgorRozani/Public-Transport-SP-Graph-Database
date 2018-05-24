@@ -200,21 +200,29 @@ CREATE
 
 // Lines
 CREATE 
-(Blue:Line {name:'Blue', company:'Metrô', number: 1}),
-(Green:Line {name: 'Green', company:'Metrô', number: 2}),
-(Red:Line{name:'Red', company:'Metrô', number: 3}),
-(Yellow:Line {name: 'Yellow', company:'ViaQuatro', number: 4}),
-(Lilac:Line {name:'Lilac', company:'Metrô', number:5}),
-(Ruby:Line {name:'Ruby', company:'CPTM', number:7}),
-(Diamond:Line {name:'Diamond', company:'CPTM', number:8}),
-(Emerald:Line {name:'Emerald', company:'CPTM',number:9}),
-(Turquoise:Line {name:'Turquoise', company:'CPTM', number: 10}),
-(Coral:Line {name:'Coral', company:'CPTM', number:11}),
-(Sapphire:Line {name:'Sapphire',company:'CPTM', number:12}),
-(Jade:Line {name: 'Jade', company:'CPTM', number: 13}),
-(Silver:Line {name: 'Silver', company:'Metrô', number: 15}),
-(MetropolitanBusCorridor:Line {name:'Metropolitan Bus Corridor', company:'EMTU'}),
-(TuristicExpress:Line {name:'Touristic Express', company:'CPTM'})
+(Blue:Line {name:'Blue', number: 1}),
+(Green:Line {name: 'Green', number: 2}),
+(Red:Line{name:'Red', number: 3}),
+(Yellow:Line {name: 'Yellow', number: 4}),
+(Lilac:Line {name:'Lilac', number:5}),
+(Ruby:Line {name:'Ruby', number:7}),
+(Diamond:Line {name:'Diamond', number:8}),
+(Emerald:Line {name:'Emerald',number:9}),
+(Turquoise:Line {name:'Turquoise', number: 10}),
+(Coral:Line {name:'Coral', number:11}),
+(Sapphire:Line {name:'Sapphire', number:12}),
+(Jade:Line {name: 'Jade', number: 13}),
+(Silver:Line {name: 'Silver', number: 15}),
+(MetropolitanBusCorridorABD:Line {name:'Metropolitan Bus Corridor ABD'}),
+(MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
+(TuristicExpress:Line {name:'Touristic Express'})
+
+// Companies
+CREATE 
+(CPTM:Company {name:'CPTM', site:'www.cptm.sp.gov.br', fone:'08000550121'}),
+(EMTU:Company {name:'EMTU', site:'www.emtu.sp.gov.br', fone:'08007240555'}),
+(Metro:Company {name:'Metrô', site:'www.metro.sp.gov.br', fone:'08007707722'}),
+(ViaQuatro:Company {name:'ViaQuatro', site:'www.viaquatro.com.br',fone:'08007707100'})
 
 // Connection between stations
 CREATE
@@ -602,25 +610,25 @@ CREATE
 (Diamond)-[:Has]->(SantaRita),
 (Diamond)-[:Has]->(AmadorBueno),
 
+// Metropolitan Bus Corridor ABD
+(MetropolitanBusCorridorABD)-[:Has]->(Morumbi),
+(MetropolitanBusCorridorABD)-[:Has]->(Diadema),
+(MetropolitanBusCorridorABD)-[:Has]->(Jabaquara),
+(MetropolitanBusCorridorABD)-[:Has]->(Piraporinha),
+(MetropolitanBusCorridorABD)-[:Has]->(SaoBernardo),
+(MetropolitanBusCorridorABD)-[:Has]->(Ferrazopolis),
+(MetropolitanBusCorridorABD)-[:Has]->(SantoAndre),
+(MetropolitanBusCorridorABD)-[:Has]->(SoniaMaria),
+(MetropolitanBusCorridorABD)-[:Has]->(SaoMateus),
 
-// First corridor
-(MetropolitanBusCorridor)-[:Has]->(Morumbi),
-(MetropolitanBusCorridor)-[:Has]->(Diadema),
-(MetropolitanBusCorridor)-[:Has]->(Jabaquara),
-(MetropolitanBusCorridor)-[:Has]->(Piraporinha),
-(MetropolitanBusCorridor)-[:Has]->(SaoBernardo),
-(MetropolitanBusCorridor)-[:Has]->(Ferrazopolis),
-(MetropolitanBusCorridor)-[:Has]->(SantoAndre),
-(MetropolitanBusCorridor)-[:Has]->(SoniaMaria),
-(MetropolitanBusCorridor)-[:Has]->(SaoMateus),
+// Metropolitan Bus Corridor Guarulhos - São Paulo
+(MetropolitanBusCorridorGuarulhosSP)-[:Has]->(Tucuruvi),
+(MetropolitanBusCorridorGuarulhosSP)-[:Has]->(VilaGalvao),
+(MetropolitanBusCorridorGuarulhosSP)-[:Has]->(Cecap),
+(MetropolitanBusCorridorGuarulhosSP)-[:Has]->(ParadaRodoviaria),
+(MetropolitanBusCorridorGuarulhosSP)-[:Has]->(Taboa),
 
-// Second corridor
-(MetropolitanBusCorridor)-[:Has]->(VilaGalvao),
-(MetropolitanBusCorridor)-[:Has]->(Cecap),
-(MetropolitanBusCorridor)-[:Has]->(ParadaRodoviaria),
-(MetropolitanBusCorridor)-[:Has]->(Taboa),
-
-
+// Turistic Express
 (TuristicExpress)-[:Has]->(SantoAndre),
 (TuristicExpress)-[:Has]->(Luz),
 (TuristicExpress)-[:Has]->(Jundiai),
@@ -648,4 +656,21 @@ CREATE
 (MogiCruzes)-[:Connect{transport:'turistic'}]->(Luz),
 (MogiCruzes)-[:Connect{transport:'turistic'}]->(SantoAndre),
 (Luz)-[:Connect{transport:'turistic'}]->(Jundiai),
-(SantoAndre)-[:Connect{transport:'turistic'}]->(Paranapiacaba)
+(SantoAndre)-[:Connect{transport:'turistic'}]->(Paranapiacaba),
+
+(CPTM)-[:Own]->(Ruby),
+(CPTM)-[:Own]->(Diamond),
+(CPTM)-[:Own]->(Emerald),
+(CPTM)-[:Own]->(Turquoise),
+(CPTM)-[:Own]->(Coral),
+(CPTM)-[:Own]->(Sapphire),
+(CPTM)-[:Own]->(Jade),
+(CPTM)-[:Own]->(TuristicExpress),
+(EMTU)-[:Own]->(MetropolitanBusCorridorABD),
+(EMTU)-[:Own]->(MetropolitanBusCorridorGuarulhosSP),
+(Metro)-[:Own]->(Blue),
+(Metro)-[:Own]->(Green),
+(Metro)-[:Own]->(Red),
+(Metro)-[:Own]->(Lilac),
+(Metro)-[:Own]->(Silver),
+(ViaQuatro)-[:Own]->(Yellow)
