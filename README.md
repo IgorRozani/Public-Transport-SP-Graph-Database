@@ -25,7 +25,7 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Pontos de interesse
 - [x] Empresas
 - [x] Ponte ORCA
-- [ ] Cobrança entre terminais
+- [ ] Integrações tarifadas
 - [ ] Estações de acesso livre
 
 ## Estrutura do banco
