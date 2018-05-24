@@ -6,7 +6,7 @@ Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (ima
 
 Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
 
-## Itens mapeados
+## Mapeamento
 - [x] Linha 1 - Azul
 - [x] Linha 2 - Verde
 - [x] Linha 3 - Vermelha
@@ -25,10 +25,8 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Pontos de interesse
 - [x] Empresas
 - [x] Ponte ORCA
-
-## Itens não mapeados
-- Cobrança entre terminais
-- Estações de acesso livre
+- [ ] Cobrança entre terminais
+- [ ] Estações de acesso livre
 
 ## Estrutura do banco
 
@@ -69,7 +67,7 @@ DELETE n,r
 
 ### Consultas
 
-#### Visualizar todas estações, linhas e relacionamentos
+#### Visualizar todos nós do sistema
 
 ```
 MATCH (n)
@@ -96,6 +94,20 @@ RETURN s
 MATCH (s:Station)-[c:Connect]-(s2:Station)
 WHERE s.name='Paulista - Consolação'
 Return s2
+```
+
+#### Todas as linhas de uma empresa
+
+```
+MATCH (c:Company)-[:Own]-(s)
+RETURN c.name, collect(s.name)
+```
+
+#### Todos os tipos de conexão
+
+```
+MATCH ()-[r]-()
+RETURN collect(distinct(type(r)))
 ```
 
 #### Quantidade de estações das linhas
