@@ -9,7 +9,7 @@ CREATE
 (Paulista:Station {name:'Paulista - Consolação', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false }),
 (Higienopolis:Station {name:'Higienópolis - Mackenzie', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Republica:Station{name:'República', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Luz:Station:Turistic {name:'Luz', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Luz:Station:Touristic {name:'Luz', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Blue Line Stations
 (Tucuruvi:Station {name:'Tucuruvi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -72,7 +72,7 @@ CREATE
 (SaoCaetanoSul:Station {name: 'São Caetano do Sul', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Utinga:Station {name: 'Utinga', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (PrefeitoSaladino:Station {name:'Prefeito Saladino', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(SantoAndre:Station:Terminal:Turistic {name:'Santo André', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(SantoAndre:Station:Terminal:Touristic {name:'Santo André', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Capuava:Station {name:'Capuava', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Maua:Station {name:'Mauá', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Guapituba:Station {name:'Guapituba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -117,7 +117,7 @@ CREATE
 (Eucaliptos:Station {name:'Eucaliptos', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Moema:Station {name:'Moema', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 // Ruby Line Stations
-(Jundiai:Station:Turistic {name:'Jundiaí', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Jundiai:Station:Touristic {name:'Jundiaí', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (VarzeaPaulista:Station {name:'Vazea Paulista', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (CampoLimpoPaulista:Station {name:'Campo Limpo Paulista', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Botujuru:Station {name:'Botujuru', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -160,7 +160,7 @@ CREATE
 (Suzano:Station {name:'Suzano', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Jundiapeba:Station {name:'Jundiapeba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (BrazCubas:Station {name:'Braz Cubas', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(MogiCruzes:Station:Turistic {name:'Mogi das Cruzes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(MogiCruzes:Station:Touristic {name:'Mogi das Cruzes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Estudantes:Station {name:'Estudates', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 // Diamond Line Stations
 (JulioPrestes:Station {name:'Julio Prestes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -196,8 +196,9 @@ CREATE
 (SaoMateus:Terminal {name: 'São Mateus', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Zoologico:Terminal {name: 'Zoológico', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: true})
 
+// Touristics
 CREATE
-(Paranapiacaba:Turistic {name: 'Paranapiacaba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false})
+(Paranapiacaba:Touristic {name: 'Paranapiacaba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false})
 
 // Lines
 CREATE 
@@ -216,7 +217,7 @@ CREATE
 (Silver:Line {name: 'Silver', number: 15}),
 (MetropolitanBusCorridorABD:Line {name:'Metropolitan Bus Corridor ABD'}),
 (MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
-(TuristicExpress:Line {name:'Touristic Express'})
+(TouristicExpress:Line {name:'Touristic Express'})
 
 // Companies
 CREATE 
@@ -630,12 +631,12 @@ CREATE
 (MetropolitanBusCorridorGuarulhosSP)-[:Has]->(ParadaRodoviaria),
 (MetropolitanBusCorridorGuarulhosSP)-[:Has]->(Taboa),
 
-// Turistic Express
-(TuristicExpress)-[:Has]->(SantoAndre),
-(TuristicExpress)-[:Has]->(Luz),
-(TuristicExpress)-[:Has]->(Jundiai),
-(TuristicExpress)-[:Has]->(MogiCruzes),
-(TuristicExpress)-[:Has]->(Paranapiacaba),
+// Touristic Express
+(TouristicExpress)-[:Has]->(SantoAndre),
+(TouristicExpress)-[:Has]->(Luz),
+(TouristicExpress)-[:Has]->(Jundiai),
+(TouristicExpress)-[:Has]->(MogiCruzes),
+(TouristicExpress)-[:Has]->(Paranapiacaba),
 
 // Connection between Terminals
 (Tucuruvi)-[:Connect{transport: 'bus'}]->(VilaGalvao),
@@ -656,10 +657,11 @@ CREATE
 (ParadaRodoviaria)-[:Connect{transport:'walk'}]->(GuarulhosCecap),
 (Jabaquara)-[:Connect{transport:'walk'}]->(Zoologico),
 
-(MogiCruzes)-[:Connect{transport:'turistic'}]->(Luz),
-(MogiCruzes)-[:Connect{transport:'turistic'}]->(SantoAndre),
-(Luz)-[:Connect{transport:'turistic'}]->(Jundiai),
-(SantoAndre)-[:Connect{transport:'turistic'}]->(Paranapiacaba),
+// Connections by touristic
+(MogiCruzes)-[:Connect{transport:'touristic'}]->(Luz),
+(MogiCruzes)-[:Connect{transport:'touristic'}]->(SantoAndre),
+(Luz)-[:Connect{transport:'touristic'}]->(Jundiai),
+(SantoAndre)-[:Connect{transport:'touristic'}]->(Paranapiacaba),
 
 (CPTM)-[:Own]->(Ruby),
 (CPTM)-[:Own]->(Diamond),
@@ -668,7 +670,7 @@ CREATE
 (CPTM)-[:Own]->(Coral),
 (CPTM)-[:Own]->(Sapphire),
 (CPTM)-[:Own]->(Jade),
-(CPTM)-[:Own]->(TuristicExpress),
+(CPTM)-[:Own]->(TouristicExpress),
 (EMTU)-[:Own]->(MetropolitanBusCorridorABD),
 (EMTU)-[:Own]->(MetropolitanBusCorridorGuarulhosSP),
 (Metro)-[:Own]->(Blue),
