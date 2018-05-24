@@ -42,6 +42,10 @@ E dos seguintes relacionamentos:
 - Has - Representa uma conexão entre Linha e suas Station, Terminal ou Touristic
 - Own - Representa a posse de um linha por uma empresa
 
+Podendo ser melhor visualizado no diagrama abaixo.
+![Database model](img/TransportSP.png?raw=true "Database model")
+
+
 ## Exemplos
 
 ### Criação
