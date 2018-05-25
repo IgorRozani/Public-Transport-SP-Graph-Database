@@ -31,16 +31,17 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 ## Estrutura do banco
 
 O banco é composto dos seguintes nós:
-- Station - Representa a estação de metrô ou trem
-- BusTerminal - Representa o terminal de ônibus
-- TouristicTerminal - Representa a estação turística
-- Line - Representa a linha de transporte
-- Company - Representa a empresa responsável
+- Station - Representa a estação de metrô ou trem;
+- BusTerminal - Representa o terminal de ônibus;
+- TouristicTerminal - Representa a estação turística;
+- Line - Representa a linha de transporte;
+- Company - Representa a empresa responsável.
 
 E dos seguintes relacionamentos:
-- Connect - Representa uma conexão entre Station, Terminal ou Touristic
-- Has - Representa uma conexão entre Linha e suas Station, Terminal ou Touristic
-- Own - Representa a posse de um linha por uma empresa
+- Connect - Representa uma conexão entre Station, Terminal ou Touristic;
+- Has - Representa uma conexão entre Linha e suas Station, Terminal ou Touristic;
+- Own - Representa a posse de um linha por uma empresa;
+- Integration - representa a integração entre linhas e estações.
 
 Podendo ser melhor visualizado no diagrama abaixo.
 ![Database model](img/TransportSP.png?raw=true "Database model")

@@ -651,10 +651,10 @@ CREATE
 (SaoBernardo)-[:Connect{transport: 'bus'}]->(Ferrazopolis),
 (SoniaMaria)-[:Connect{transport: 'bus'}]->(SaoMateus),
 
-// Connections by walking
-(Taboa)-[:Connect{transport:'walk'}]->(AeroportoGuarulhos),
-(ParadaRodoviaria)-[:Connect{transport:'walk'}]->(GuarulhosCecap),
-(Jabaquara)-[:Connect{transport:'walk'}]->(Zoologico),
+// Integrations
+(Taboa)-[:Integration{isPaid:'always'}]->(AeroportoGuarulhos),
+(ParadaRodoviaria)-[:Integration{isPaid:'always'}]->(GuarulhosCecap),
+(Jabaquara)-[:Integration{isPaid:'always'}]->(Zoologico),
 
 // Connections by touristic
 (MogiCruzes)-[:Connect{transport:'touristic'}]->(Luz),
