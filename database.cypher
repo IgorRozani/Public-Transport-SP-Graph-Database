@@ -9,7 +9,7 @@ CREATE
 (Paulista:Station {name:'Paulista - Consolação', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false }),
 (Higienopolis:Station {name:'Higienópolis - Mackenzie', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Republica:Station{name:'República', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Luz:Station:Touristic {name:'Luz', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Luz:Station:TouristicTerminal {name:'Luz', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Blue Line Stations
 (Tucuruvi:Station {name:'Tucuruvi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -33,7 +33,7 @@ CREATE
 (Saude:Station {name:'Saúde', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (SaoJudas:Station {name:'São Judas', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Conceicao:Station {name:'Conceição', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Jabaquara:Station:Terminal {name:'Jabaquara', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: true, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Jabaquara:Station:BusTerminal {name:'Jabaquara', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: true, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Green Line Stations
 (VilaMadalena:Station {name: 'Vila Madalena', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -45,7 +45,7 @@ CREATE
 (Santos:Station {name:'Santos Imigrantes', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: true, hasElevator: true, hasZoo: false}),
 (AltoIpiranga:Station {name:'Alto do Ipiranga', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Sacoma:Station {name:'Sacomã', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Tamanduatei:Station:Terminal {name:'Tamanduateí', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Tamanduatei:Station:BusTerminal {name:'Tamanduateí', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (VilaPrudente:Station {name:'Vila Prudente', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Red Line Stations
@@ -64,7 +64,7 @@ CREATE
 (Anhangabau:Station {name:'Anhangabaú', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (SantaCecilia:Station {name:'Santa Cecília', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (MalDeodoro:Station {name:'Mal. Deodoro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(BarraFunda:Station:Terminal {name:'Palmeiras - Barra Funda', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: true, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(BarraFunda:Station:BusTerminal {name:'Palmeiras - Barra Funda', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: true, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Turquoise Line Stations
 (Juventus:Station {name:'Juventus - Mooca', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -72,12 +72,12 @@ CREATE
 (SaoCaetanoSul:Station {name: 'São Caetano do Sul', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Utinga:Station {name: 'Utinga', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (PrefeitoSaladino:Station {name:'Prefeito Saladino', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(SantoAndre:Station:Terminal:Touristic {name:'Santo André', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(SantoAndre:Station:BusTerminal:TouristicTerminal {name:'Santo André', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Capuava:Station {name:'Capuava', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Maua:Station {name:'Mauá', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Guapituba:Station {name:'Guapituba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (RibeiraoPires:Station {name:'Ribeirão Pires', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(RioGrandeSerra:Station:Terminal {name:'Rio Grande da Serra', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(RioGrandeSerra:Station:BusTerminal {name:'Rio Grande da Serra', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 
 // Sapphire Line Stations
 (USPLeste:Station {name: 'USP Leste', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -104,8 +104,8 @@ CREATE
 (VilaUniao:Station {name:'Vila União', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 
 // Lilac Line Stations
-(CapaoRedondo:Station:Terminal {name:'Capão Redondo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(CampoLimpo:Station:Terminal {name:'Campo Limpo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(CapaoRedondo:Station:BusTerminal {name:'Capão Redondo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(CampoLimpo:Station:BusTerminal {name:'Campo Limpo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (VilaBelezas:Station {name:'Vila das Belezas', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (GiovanniGronchi:Station {name:'Giovanni Gronchi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (SantoAmaro:Station {name:'Santo Amaro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -117,7 +117,7 @@ CREATE
 (Eucaliptos:Station {name:'Eucaliptos', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Moema:Station {name:'Moema', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 // Ruby Line Stations
-(Jundiai:Station:Touristic {name:'Jundiaí', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Jundiai:Station:TouristicTerminal {name:'Jundiaí', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (VarzeaPaulista:Station {name:'Vazea Paulista', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (CampoLimpoPaulista:Station {name:'Campo Limpo Paulista', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Botujuru:Station {name:'Botujuru', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -142,14 +142,14 @@ CREATE
 (Reboucas:Station {name:'Hebraica - Rebouças', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (CidadeJardim:Station {name:'Cidade Jardim', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (VilaOlimpia:Station {name:'Vila Olímpia', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Berrini:Station:Terminal {name:'Berrini', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Morumbi:Station:Terminal {name:'Morumbi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Berrini:Station:BusTerminal {name:'Berrini', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Morumbi:Station:BusTerminal {name:'Morumbi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (GranjaJulieta:Station {name:'Granja Julieta', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Socorro:Station {name:'Socorro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Jurubatuba:Station {name:'Jurubatuba', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Autodromo:Station {name:'Autódromo', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Interlagos:Station {name:'Primavera - Interlagos', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
-(Grajau:Station:Terminal {name:'Grajaú', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
+(Grajau:Station:BusTerminal {name:'Grajaú', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 // Coral Line Stations
 (DomBosco:Station {name:'Dom Bosco', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (JoseBonifacio:Station {name:'José Bonifácio', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
@@ -160,7 +160,7 @@ CREATE
 (Suzano:Station {name:'Suzano', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: true, hasZoo: false}),
 (Jundiapeba:Station {name:'Jundiapeba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (BrazCubas:Station {name:'Braz Cubas', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(MogiCruzes:Station:Touristic {name:'Mogi das Cruzes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(MogiCruzes:Station:TouristicTerminal {name:'Mogi das Cruzes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 (Estudantes:Station {name:'Estudates', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
 // Diamond Line Stations
 (JulioPrestes:Station {name:'Julio Prestes', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
@@ -184,21 +184,21 @@ CREATE
 
 // Terminals
 CREATE
-(Taboa:Terminal {name: 'Taboão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(ParadaRodoviaria:Terminal {name: 'Parada Rodoviária', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(Cecap:Terminal {name: 'Cecap', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(VilaGalvao:Terminal {name:'Vila Galvão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(Diadema:Terminal {name: 'Diadema', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(Piraporinha:Terminal {name: 'Piraporinha', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(SaoBernardo:Terminal {name:'São Bernardo', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(Ferrazopolis:Terminal {name:'Ferrazópolis', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(SoniaMaria:Terminal {name: 'Sônia Maria', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(SaoMateus:Terminal {name: 'São Mateus', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
-(Zoologico:Terminal {name: 'Zoológico', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: true})
+(Taboa:BusTerminal {name: 'Taboão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(ParadaRodoviaria:BusTerminal {name: 'Parada Rodoviária', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Cecap:BusTerminal {name: 'Cecap', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(VilaGalvao:BusTerminal {name:'Vila Galvão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Diadema:BusTerminal {name: 'Diadema', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Piraporinha:BusTerminal {name: 'Piraporinha', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(SaoBernardo:BusTerminal {name:'São Bernardo', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Ferrazopolis:BusTerminal {name:'Ferrazópolis', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(SoniaMaria:BusTerminal {name: 'Sônia Maria', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(SaoMateus:BusTerminal {name: 'São Mateus', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false}),
+(Zoologico:BusTerminal {name: 'Zoológico', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: true})
 
 // Touristics
 CREATE
-(Paranapiacaba:Touristic {name: 'Paranapiacaba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false})
+(Paranapiacaba:TouristicTerminal {name: 'Paranapiacaba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasRoadTerminal: false, hasAirport:false, hasCarParking: false, hasElevator: false, hasZoo: false})
 
 // Lines
 CREATE 
