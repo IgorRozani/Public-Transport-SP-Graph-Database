@@ -32,8 +32,8 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 
 O banco é composto dos seguintes nós:
 - Station - Representa a estação de metrô ou trem
-- Terminal - Representa o terminal de ônibus
-- Touristic - Representa a estação turística
+- BusTerminal - Representa o terminal de ônibus
+- TouristicTerminal - Representa a estação turística
 - Line - Representa a linha de transporte
 - Company - Representa a empresa responsável
 
