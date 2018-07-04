@@ -214,6 +214,7 @@ CREATE
 (Lilac:Line {name:'Lilac', number:5}),
 (Ruby:Line {name:'Ruby', number:7}),
 (Diamond:Line {name:'Diamond', number:8}),
+(DiamondOperationalExtension:Line {name:'Diamond - Operational Extension', number:8}),
 (Emerald:Line {name:'Emerald',number:9}),
 (Turquoise:Line {name:'Turquoise', number: 10}),
 (Coral:Line {name:'Coral', number:11}),
@@ -616,8 +617,9 @@ CREATE
 (Diamond)-[:Has]->(SagradoCoracao),
 (Diamond)-[:Has]->(EngCardoso),
 (Diamond)-[:Has]->(Itapevi),
-(Diamond)-[:Has]->(SantaRita),
-(Diamond)-[:Has]->(AmadorBueno),
+(DiamondOperationalExtension)-[:Has]->(Itapevi),
+(DiamondOperationalExtension)-[:Has]->(SantaRita),
+(DiamondOperationalExtension)-[:Has]->(AmadorBueno),
 
 // Metropolitan Bus Corridor ABD
 (MetropolitanBusCorridorABD)-[:Has]->(Morumbi),
