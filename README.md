@@ -1,51 +1,49 @@
 # Public Transport SP - Graph Database
 
-Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (imagem abaixo), mapeei todas as estações, terminais, linhas e conexões utilizando o banco NoSQL de grafos, utilizando o banco Neo4j.
+Transporte Metropolitano de SP mapeado em um banco de NoSQL de grafos.
+
+## Sumário
+
+* [Inspiração](#Inspiração)
+* [Estrutura do banco](#Estrutura-do-banco)
+* [Softwares necessários](#Softwares-necessários)
+* [Exemplos](#Exemplos)
+      * [Criação](#Criação)
+      * [Exclusão](#Exclusão)
+      * [Consultas](#Consultas)
+
+## Inspiração
+
+Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (imagem abaixo), mapeei todas as estações, terminais, linhas e conexões utilizando em um banco NoSQL de grafos, utilizando o banco Neo4j e a linguagem openCypher.
 
 ![Map](img/map.png?raw=true "Map")
 
-Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
-
-## Mapeamento
-- [x] Linha 1 - Azul
-- [x] Linha 2 - Verde
-- [x] Linha 3 - Vermelha
-- [x] Linha 4 - Amarela
-- [x] Linha 5 - Lilás
-- [x] Linha 7 - Rubi
-- [x] Linha 8 - Diamante
-- [x] Linha 9 - Esmeralda
-- [x] Linha 10 - Turquesa
-- [x] Linha 11 - Coral
-- [x] Linha 12 - Safira
-- [x] Linha 13 - Jade
-- [x] Linha 15 - Prata
-- [x] Expresso turístico
-- [x] Corredor metropolitano de ônibus
-- [x] Pontos de interesse
-- [x] Empresas
-- [x] Ponte ORCA
-- [x] Integrações tarifadas
-- [x] Estações de acesso livre (grátis)
-
 ## Estrutura do banco
 
-O banco é composto dos seguintes nós:
-- Station - Representa a estação de metrô ou trem;
-- BusTerminal - Representa o terminal de ônibus;
-- TouristicTerminal - Representa a estação turística;
-- Line - Representa a linha de transporte;
-- Company - Representa a empresa responsável.
+Baseado na imagem anterior, foi definida a seguinte modelagem do banco:
 
-E dos seguintes relacionamentos:
-- Connect - Representa uma conexão entre Station, Terminal ou Touristic;
-- Has - Representa uma conexão entre Linha e suas Station, Terminal ou Touristic;
-- Own - Representa a posse de um linha por uma empresa;
-- Integration - representa a integração entre linhas e estações.
-
-Podendo ser melhor visualizado no diagrama abaixo.
 ![Database model](img/TransportSP.png?raw=true "Database model")
 
+Sendo composto dos seguintes labels de nós (nodes), cada um representando um ponto do mapa:
+- BusTerminal - terminais de ônibus. Por Exemplo: São Bernardo e Jabaquara;
+- Company - empresas responsáveis pelas linhas de transporte de SP. Exemplo: CPTM;
+- Line - linhas de transporte. Exemplo: Linha amarela;
+- MetroStation - estações de metro. Exemplo: Estação Paulista;
+- OrcaShuttleTerminal - terminais da Ponte Orca. Exemplo: Estação Jabaquara;
+- PointOfInterest - Pontos de interesse. Exemplo: Rodoviária e Zoológico;
+- TouristicTerminal - estações turística. Exempo: Estação Paranapiacaba;
+- TrainStation - estações de trem. Exemplo: Morumbi.
+
+E dos seguintes relacionamentos:
+- Connect - conexão entre estações e/ou terminais;
+- Has - localização de um ponto de interesse;
+- Integration - integração entre diferentes tipos de estações e/ou terminais;
+- Own - posse de um linha por uma empresa;
+- Part_Of - a participação de um estação e/ou terminal em uma linha.
+
+## Softwares necessários
+
+Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
 
 ## Exemplos
 
@@ -116,7 +114,9 @@ RETURN c.name, collect(s.name)
 
 ```
 MATCH ()-[r]-()
-RETURN collect(distinct(type(r)))
+WITH DISTINCT type(r) AS relationships
+RETURN DISTINCT relationships
+ORDER BY relationships
 ```
 
 #### Todos os labels dos nós
