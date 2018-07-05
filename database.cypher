@@ -225,7 +225,7 @@ CREATE
 (Silver:Line {name: 'Silver', number: 15}),
 (MetropolitanBusCorridorABD:Line {name:'Metropolitan Bus Corridor ABD'}),
 (MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
-(TouristicExpress:Line {name:'Touristic Express'}),
+(TouristicExpress:Line {name:'Touristic Express'})
 
 // Companies
 CREATE 
