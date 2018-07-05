@@ -5,12 +5,12 @@ Transporte Metropolitano de SP mapeado em um banco de NoSQL de grafos.
 ## Sumário
 
 * [Inspiração](#inspiração)
-* [Estrutura do banco](#Estrutura-do-banco)
-* [Softwares necessários](#Softwares-necessários)
-* [Exemplos](#Exemplos)
-  * [Criação](#Criação)
-  * [Exclusão](#Exclusão)
-  * [Consultas](#Consultas)
+* [Estrutura do banco](#estrutura-do-banco)
+* [Softwares necessários](#softwares-necessários)
+* [Exemplos](#exemplos)
+  * [Criação](#criação)
+  * [Exclusão](#exclusão)
+  * [Consultas](#consultas)
 
 ## Inspiração
 
