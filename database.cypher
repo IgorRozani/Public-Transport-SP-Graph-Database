@@ -33,7 +33,7 @@ CREATE
 (Saude:MetroStation {name:'Saúde', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (SaoJudas:MetroStation {name:'São Judas', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (Conceicao:MetroStation {name:'Conceição', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
-(Jabaquara:MetroStation:BusTerminal {name:'Jabaquara', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(Jabaquara:MetroStation:BusTerminal:OrcaShuttleTerminal {name:'Jabaquara', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 
 // Green Line Stations
 (VilaMadalena:MetroStation {name: 'Vila Madalena', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
@@ -198,12 +198,15 @@ CREATE
 (SaoBernardo:BusTerminal {name:'São Bernardo', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
 (Ferrazopolis:BusTerminal {name:'Ferrazópolis', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
 (SoniaMaria:BusTerminal {name: 'Sônia Maria', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
-(SaoMateus:BusTerminal {name: 'São Mateus', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: false}),
-(Zoologico:BusTerminal {name: 'Zoológico', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: false})
+(SaoMateus:BusTerminal {name: 'São Mateus', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: false})
 
 // Touristics
 CREATE
 (Paranapiacaba:TouristicTerminal {name: 'Paranapiacaba', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false})
+
+// Orca Shuttle Terminals
+CREATE 
+(ZooTerminal:OrcaShuttleTerminal {name: 'Zoo', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false})
 
 // Lines
 CREATE 
@@ -226,7 +229,8 @@ CREATE
 (MetropolitanBusCorridorABD:Line {name:'Metropolitan Bus Corridor ABD'}),
 (MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
 (MetropolitanBus:Line{name:'Metropolitan Bus'}),
-(TouristicExpress:Line {name:'Touristic Express'})
+(TouristicExpress:Line {name:'Touristic Express'}),
+(OrcaShuttleService:Line {name:'Orca Shuttle Service'})
 
 // Companies
 CREATE 
@@ -444,7 +448,10 @@ CREATE
 (MogiCruzes)-[:Connect{transport:'touristic'}]->(Luz),
 (MogiCruzes)-[:Connect{transport:'touristic'}]->(SantoAndre),
 (Luz)-[:Connect{transport:'touristic'}]->(Jundiai),
-(SantoAndre)-[:Connect{transport:'touristic'}]->(Paranapiacaba)
+(SantoAndre)-[:Connect{transport:'touristic'}]->(Paranapiacaba),
+
+// Connections by Orca
+(Jabaquara)-[:Connect{transport:'bus'}]->(ZooTerminal)
 
 // Line has Stations
 CREATE 
@@ -680,13 +687,16 @@ CREATE
 (TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(Luz),
 (TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(Jundiai),
 (TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(MogiCruzes),
-(TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(Paranapiacaba)
+(TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(Paranapiacaba),
+
+// Orca
+(OrcaShuttleService)<-[:Part_Of{isPaid:'always'}]-(Jabaquara),
+(OrcaShuttleService)<-[:Part_Of{isPaid:'always'}]-(ZooTerminal)
 
 // Integrations
 CREATE
 (Taboao)-[:Integration{isPaid:'always'}]->(AeroportoGuarulhos),
 (ParadaRodoviaria)-[:Integration{isPaid:'always'}]->(GuarulhosCecap),
-(Jabaquara)-[:Integration{isPaid:'always'}]->(Zoologico),
 (Paulista)-[:Integration{isPaid:'never'}]->(Consolacao)
 
 // Has
@@ -694,8 +704,8 @@ CREATE
 (AeroportoGuarulhos)-[:Has]->(Airport),
 (Jabaquara)-[:Has]->(RoadTerminal),
 (BarraFunda)-[:Has]->(RoadTerminal),
-(Tiete)-[:Has]->(RoadTerminal)
-(Zoologico)-[:Has]->(Zoo)
+(Tiete)-[:Has]->(RoadTerminal),
+(ZooTerminal)-[:Has]->(Zoo)
 
 // Owns
 CREATE
@@ -709,6 +719,8 @@ CREATE
 (CPTM)-[:Own]->(TouristicExpress),
 (EMTU)-[:Own]->(MetropolitanBusCorridorABD),
 (EMTU)-[:Own]->(MetropolitanBusCorridorGuarulhosSP),
+(EMTU)-[:Own]->(MetropolitanBus),
+(EMTU)-[:Own]->(OrcaShuttleService),
 (Metro)-[:Own]->(Blue),
 (Metro)-[:Own]->(Green),
 (Metro)-[:Own]->(Red),
