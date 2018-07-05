@@ -105,8 +105,8 @@ CREATE
 (VilaUniao:MetroStation {name:'Vila União', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 
 // Lilac Line Stations
-(CapaoRedondo:Station:MetroStation {name:'Capão Redondo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
-(CampoLimpo:Station:MetroStation {name:'Campo Limpo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(CapaoRedondo:MetroStation:BusTerminal {name:'Capão Redondo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(CampoLimpo:MetroStation:BusTerminal {name:'Campo Limpo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (VilaBelezas:MetroStation {name:'Vila das Belezas', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (GiovanniGronchi:MetroStation {name:'Giovanni Gronchi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (SantoAmaro:TrainStation:MetroStation {name:'Santo Amaro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
@@ -189,7 +189,7 @@ CREATE
 
 // Terminals
 CREATE
-(Taboa:BusTerminal {name: 'Taboão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
+(Taboao:BusTerminal {name: 'Taboão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
 (ParadaRodoviaria:BusTerminal {name: 'Parada Rodoviária', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
 (Cecap:BusTerminal {name: 'Cecap', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
 (VilaGalvao:BusTerminal {name:'Vila Galvão', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false}),
@@ -225,6 +225,7 @@ CREATE
 (Silver:Line {name: 'Silver', number: 15}),
 (MetropolitanBusCorridorABD:Line {name:'Metropolitan Bus Corridor ABD'}),
 (MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
+(MetropolitanBus:Line{name:'Metropolitan Bus'}),
 (TouristicExpress:Line {name:'Touristic Express'})
 
 // Companies
@@ -429,7 +430,7 @@ CREATE
 (Tucuruvi)-[:Connect{transport: 'bus'}]->(VilaGalvao),
 (VilaGalvao)-[:Connect{transport: 'bus'}]->(Cecap),
 (Cecap)-[:Connect{transport: 'bus'}]->(ParadaRodoviaria),
-(ParadaRodoviaria)-[:Connect{transport: 'bus'}]->(Taboa),
+(ParadaRodoviaria)-[:Connect{transport: 'bus'}]->(Taboao),
 (Morumbi)-[:Connect{transport:'bus'}]->(Diadema),
 (Jabaquara)-[:Connect{transport:'bus'}]->(Diadema),
 (Diadema)-[:Connect{transport: 'bus'}]->(Piraporinha),
@@ -664,7 +665,15 @@ CREATE
 (MetropolitanBusCorridorGuarulhosSP)<-[:Part_Of{isPaid:'always'}]-(VilaGalvao),
 (MetropolitanBusCorridorGuarulhosSP)<-[:Part_Of{isPaid:'always'}]-(Cecap),
 (MetropolitanBusCorridorGuarulhosSP)<-[:Part_Of{isPaid:'always'}]-(ParadaRodoviaria),
-(MetropolitanBusCorridorGuarulhosSP)<-[:Part_Of{isPaid:'always'}]-(Taboa),
+(MetropolitanBusCorridorGuarulhosSP)<-[:Part_Of{isPaid:'always'}]-(Taboao),
+
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(Berrini),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(Grajau),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(CapaoRedondo),
+(MetropolitanBus)<-[:Part_Of{isPaid:'never'}]-(CampoLimpo),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(BarraFunda),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(Tamanduatei),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(RioGrandeSerra),
 
 // Touristic Express
 (TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(SantoAndre),
@@ -675,7 +684,7 @@ CREATE
 
 // Integrations
 CREATE
-(Taboa)-[:Integration{isPaid:'always'}]->(AeroportoGuarulhos),
+(Taboao)-[:Integration{isPaid:'always'}]->(AeroportoGuarulhos),
 (ParadaRodoviaria)-[:Integration{isPaid:'always'}]->(GuarulhosCecap),
 (Jabaquara)-[:Integration{isPaid:'always'}]->(Zoologico),
 (Paulista)-[:Integration{isPaid:'never'}]->(Consolacao)
