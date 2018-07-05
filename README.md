@@ -25,7 +25,7 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 - [x] Pontos de interesse
 - [x] Empresas
 - [x] Ponte ORCA
-- [ ] Integrações tarifadas
+- [x] Integrações tarifadas
 - [x] Estações de acesso livre (grátis)
 
 ## Estrutura do banco
@@ -117,6 +117,16 @@ RETURN c.name, collect(s.name)
 ```
 MATCH ()-[r]-()
 RETURN collect(distinct(type(r)))
+```
+
+#### Todos os labels dos nós
+
+```
+MATCH (n)
+WITH DISTINCT labels(n) AS labels
+UNWIND labels AS label
+RETURN DISTINCT label
+ORDER BY label
 ```
 
 #### Quantidade de estações das linhas
