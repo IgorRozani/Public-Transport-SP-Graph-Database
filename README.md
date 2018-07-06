@@ -52,14 +52,13 @@ Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clican
 #### Criar um nó
 
 ```
-CREATE (:Line {name: 'Esmeralda', company: 'CPTM', number: 9})
+CREATE (:Line {name:'Emerald', number:9})
 ```
 
 #### Criar um relacionamento
 
 ```
-MATCH (s1:Station),(s2:Station)
-WHERE s1.name = 'Poá' AND s2.name = 'Suzano'
+MATCH (s1:TrainStation{name:'Poá'}),(s2:TrainStation{name:'Suzano'})
 CREATE (s1)-[r:Connect{transport: 'train'}]->(s2)
 ```
 
@@ -88,19 +87,25 @@ MATCH (:Line{name:'Jade'})-[:Has]-(s:Station)
 RETURN s
 ```
 
-#### Todas as estações que possuem terminal rodoviário
+#### Todos os nós que possuem elevador
 
 ```
-MATCH (s:Station {hasRoadTerminal:true})
+MATCH (s {hasElevator:true})
 RETURN s
 ```
 
-#### Todas as conexões de uma estação
+#### Todas as conexões de um nó
 
 ```
-MATCH (s:Station)-[c:Connect]-(s2:Station)
-WHERE s.name='Paulista - Consolação'
-Return s2
+MATCH ({name:'Luz'})-[:Connect]-(s)
+Return s
+```
+
+#### Todas as conexões do label TouristicTerminal de um nó
+
+```
+MATCH ({name:'Luz'})-[:Connect]-(s:TouristicTerminal)
+Return s
 ```
 
 #### Todas as linhas de uma empresa
@@ -110,7 +115,7 @@ MATCH (c:Company)-[:Own]-(s)
 RETURN c.name, collect(s.name)
 ```
 
-#### Todos os tipos de conexão
+#### Todos os tipos de conexão ordernado por ordem alfabética
 
 ```
 MATCH ()-[r]-()
@@ -119,7 +124,7 @@ RETURN DISTINCT relationships
 ORDER BY relationships
 ```
 
-#### Todos os labels dos nós
+#### Todos os labels dos nós ordernado por ordem alfabética
 
 ```
 MATCH (n)
@@ -129,48 +134,48 @@ RETURN DISTINCT label
 ORDER BY label
 ```
 
-#### Quantidade de estações das linhas
+#### Quantidade de estações/terminais das linhas
 
 ```
-MATCH (l:Line)-[h:Has]-()
-WITH l, count(h) as qtd
-RETURN l.number, l.name, qtd
-ORDER BY l.number
+MATCH (l:Line)-[p:Part_Of]-()
+WITH l, count(p) as qtd
+RETURN l.name, qtd
+ORDER BY qtd DESC
 ```
 
-#### Quantidade de estações que possuem bicicletário ou paraciclos
+#### Quantidade de locais que possuem bicicletário ou paraciclos
 
 ```
-MATCH (s:Station)
+MATCH (s)
 WHERE s.hasBikeParkingTerminal OR s.hasBikeAttachingPost
 WITH count(s) as qtd
 RETURN qtd
 ```
 
-#### Todas as estações que estão em mais de uma linha
+#### Todos nós que estão em mais de uma linha
 
 ```
-MATCH (s:Station)-[h:Has]-(:Line)
-WITH s, count(h) as qtd
+MATCH (s)-[p:Part_Of]-(:Line)
+WITH s, count(p) as qtd
 WHERE qtd > 1
 RETURN s.name, qtd
 ORDER BY qtd DESC
 ```
 
-#### Caminho com o menor número de estações
+#### Caminho com o menor número de estações independente do tipo
 
 ```
-MATCH x = shortestPath((s1:Station)-[:Connect*]-(s2:Station))
-WHERE s1.name="Grajaú" AND s2.name="Rio Grande da Serra"
+MATCH x = shortestPath((s1{name:"Grajaú"})-[:Connect*]-(s2{name:"Rio Grande da Serra"}))
 RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 ```
 
-#### Menor caminho utilizando apenas o trem
+#### Menor caminho utilizando apenas trem ou metro
 
 ```
-MATCH (s1:Station {name:'Pinheiros'}),
-	    (s2:Station {name:'Corinthians - Itaquera'}),
-      p = shortestPath((s1)-[:Connect*]-(s2))
-WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.transport='train')
-RETURN p
+MATCH 
+	(s1{name:"Grajaú"}), 
+    (s2{name:"Rio Grande da Serra"}),
+	p = shortestPath((s1)-[:Connect*]-(s2))
+WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.transport='train' OR x.transport='metro')
+RETURN EXTRACT(n IN NODES(p) | n.name) AS Directions
 ```
