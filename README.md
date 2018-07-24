@@ -2,6 +2,8 @@
 
 Transporte Metropolitano de SP mapeado em um banco de NoSQL de grafos.
 
+Você pode ler uma explicação mais detalhada no meu medium: https://medium.com/@igorrozani/transporte-de-sp-em-um-banco-de-grafos-3ce17d4f1f41
+
 ## Sumário
 
 * [Inspiração](#inspiração)
