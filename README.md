@@ -83,8 +83,8 @@ RETURN n
 #### Todas as estações de uma linha
 
 ```
-MATCH (:Line{name:'Jade'})-[:Has]-(s:Station)
-RETURN s
+MATCH (l:Line)-[:Part_Of]-(s)
+RETURN l.name, collect(s.name)
 ```
 
 #### Todos os nós que possuem elevador
@@ -111,8 +111,12 @@ Return s
 #### Todas as linhas de uma empresa
 
 ```
-MATCH (c:Company)-[:Own]-(s)
-RETURN c.name, collect(s.name)
+MATCH (c:Company)-[:Own]-(l:Line)
+WITH c, l
+ORDER BY l.number, l.name
+WITH c, collect(CASE WHEN l.number IS NULL THEN l.name ELSE l.number + ' - ' + l.name END) as lines
+RETURN c.name, lines
+ORDER BY c.name
 ```
 
 #### Todos os tipos de conexão ordernado por ordem alfabética
@@ -137,19 +141,19 @@ ORDER BY label
 #### Quantidade de estações/terminais das linhas
 
 ```
-MATCH (l:Line)-[p:Part_Of]-()
-WITH l, count(p) as qtd
+MATCH (l:Line)-[:Part_Of]-(s)
+WITH l, count(s) as qtd
 RETURN l.name, qtd
-ORDER BY qtd DESC
+ORDER BY l.name
 ```
 
 #### Quantidade de locais que possuem bicicletário ou paraciclos
 
 ```
-MATCH (s)
-WHERE s.hasBikeParkingTerminal OR s.hasBikeAttachingPost
-WITH count(s) as qtd
-RETURN qtd
+MATCH (l:Line)-[:Part_Of]-(s)
+WITH l, count(s) as qtd
+RETURN CASE WHEN l.number IS NULL THEN l.name ELSE l.number END, sum(qtd) as total
+ORDER BY total DESC
 ```
 
 #### Todos nós que estão em mais de uma linha
