@@ -10,6 +10,7 @@ CREATE
 (Higienopolis:MetroStation {name:'Higienópolis - Mackenzie', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (Republica:MetroStation{name:'República', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (Luz:MetroStation:TrainStation:TouristicTerminal {name:'Luz', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(SaoPauloMorumbi:MetroStation {name:'São Paulo - Morumbi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 
 // Blue Line Stations
 (Tucuruvi:MetroStation {name:'Tucuruvi', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
@@ -248,6 +249,7 @@ CREATE
 // Connection between stations
 CREATE
 // Yellow Line 
+(SaoPauloMorumbi)-[:Connect{transport:'metro'}]->(Butanta),
 (Butanta)-[:Connect{transport: 'metro'}]->(Pinheiros),
 (Pinheiros)-[:Connect{transport: 'metro'}]->(FariaLima),
 (FariaLima)-[:Connect{transport: 'metro'}]->(FradiqueCoutinho),
@@ -455,6 +457,7 @@ CREATE
 
 // Line has Stations
 CREATE 
+(Yellow)<-[:Part_Of{isPaid:'never'}]-(SaoPauloMorumbi),
 (Yellow)<-[:Part_Of{isPaid:'never'}]-(Butanta),
 (Yellow)<-[:Part_Of{isPaid:'never'}]-(Pinheiros),
 (Yellow)<-[:Part_Of{isPaid:'never'}]-(FariaLima),
