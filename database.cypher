@@ -233,7 +233,9 @@ CREATE
 (MetropolitanBusCorridorGuarulhosSP:Line {name:'Metropolitan Bus Corridor Guarulhos - São Paulo'}),
 (MetropolitanBus:Line{name:'Metropolitan Bus'}),
 (TouristicExpress:Line {name:'Touristic Express'}),
-(OrcaShuttleService:Line {name:'Orca Shuttle Service'})
+(OrcaShuttleService:Line {name:'Orca Shuttle Service'}),
+(AirportConnect:Line {name:'Airport Connect'}),
+(AirportExpress:Line {name:'Airport Express'})
 
 // Companies
 CREATE 
@@ -459,7 +461,10 @@ CREATE
 (SantoAndre)-[:Connect{transport:'touristic'}]->(Paranapiacaba),
 
 // Connections by Orca
-(Jabaquara)-[:Connect{transport:'bus'}]->(ZooTerminal)
+(Jabaquara)-[:Connect{transport:'bus'}]->(ZooTerminal),
+
+// Airport Express
+(Luz)-[:Connect{transport:'train'}]-(AeroportoGuarulhos)
 
 // Line has Stations
 CREATE 
@@ -704,7 +709,19 @@ CREATE
 
 // Orca
 (OrcaShuttleService)<-[:Part_Of{isPaid:'always'}]-(Jabaquara),
-(OrcaShuttleService)<-[:Part_Of{isPaid:'always'}]-(ZooTerminal)
+(OrcaShuttleService)<-[:Part_Of{isPaid:'always'}]-(ZooTerminal),
+
+// Airport Connect
+(AirportConnect)<-[:Part_Of{isPaid:'never'}]-(Bras),
+(AirportConnect)<-[:Part_Of{isPaid:'never'}]-(Tatuape),
+(AirportConnect)<-[:Part_Of{isPaid:'never'}]-(EngGoulart),
+(AirportConnect)<-[:Part_Of{isPaid:'never'}]-(GuarulhosCecap),
+(AirportConnect)<-[:Part_Of{isPaid:'never'}]-(AeroportoGuarulhos),
+
+// Airport Express
+(AirportExpress)<-[:Part_Of{isPaid:'always'}]-(Luz),
+(AirportExpress)<-[:Part_Of{isPaid:'always'}]-(AeroportoGuarulhos)
+
 
 // Integrations
 CREATE
@@ -734,6 +751,8 @@ CREATE
 (EMTU)-[:Own]->(MetropolitanBusCorridorGuarulhosSP),
 (EMTU)-[:Own]->(MetropolitanBus),
 (EMTU)-[:Own]->(OrcaShuttleService),
+(CPTM)-[:Own]->(AirportConnect),
+(CPTM)-[:Own]->(AirportExpress),
 (Metro)-[:Own]->(Blue),
 (Metro)-[:Own]->(Green),
 (Metro)-[:Own]->(Red),
