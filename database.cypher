@@ -118,6 +118,8 @@ CREATE
 (Brooklin:MetroStation {name:'Brooklin', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (Eucaliptos:MetroStation {name:'Eucaliptos', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (Moema:MetroStation {name:'Moema', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(AACD:MetroStation {name:'AACD - Servidor', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(HospitalSP:MetroStation {name:'Hospital São Paulo', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 
 // Ruby Line Stations
 (Jundiai:TrainStation:TouristicTerminal {name:'Jundiaí', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false, isFreeAccess: false}),
@@ -359,6 +361,10 @@ CREATE
 (BorbaGato)-[:Connect{transport: 'metro'}]->(Brooklin),
 (Brooklin)-[:Connect{transport: 'metro'}]->(Eucaliptos),
 (Eucaliptos)-[:Connect{transport: 'metro'}]->(Moema),
+(Moema)-[:Connect{transport:'metro'}]->(AACD),
+(AACD)-[:Connect{transport:'metro'}]->(HospitalSP),
+(HospitalSP)-[:Connect{transport:'metro'}]->(VilaMariana),
+(VilaMariana)-[:Connect{transport:'metro'}]->(ChacaraKlabin),
 // Ruby Line
 (Jundiai)-[:Connect{transport: 'train'}]->(VarzeaPaulista),
 (VarzeaPaulista)-[:Connect{transport: 'train'}]->(CampoLimpoPaulista),
@@ -577,6 +583,10 @@ CREATE
 (Lilac)<-[:Part_Of{isPaid:'never'}]-(Brooklin),
 (Lilac)<-[:Part_Of{isPaid:'never'}]-(Eucaliptos),
 (Lilac)<-[:Part_Of{isPaid:'never'}]-(Moema),
+(Lilac)<-[:Part_Of{isPaid:'never'}]-(AACD),
+(Lilac)<-[:Part_Of{isPaid:'never'}]-(HospitalSP),
+(Lilac)<-[:Part_Of{isPaid:'never'}]-(VilaMariana),
+(Lilac)<-[:Part_Of{isPaid:'never'}]-(ChacaraKlabin),
 
 (RubyOperationalExtension)<-[:Part_Of{isPaid:'never'}]-(Jundiai),
 (RubyOperationalExtension)<-[:Part_Of{isPaid:'never'}]-(VarzeaPaulista),
