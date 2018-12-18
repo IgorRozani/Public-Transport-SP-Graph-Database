@@ -183,10 +183,10 @@ CREATE
 (Barueri:TrainStation {name:'Barueri', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (JardimBelval:TrainStation {name:'Jardim Belval', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (JardimSilveira:TrainStation {name:'Jardim Silveira', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: false, isFreeAccess: false}),
-(Jandira:TrainStation {name:'Jandira', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(Jandira:TrainStation:BusTerminal {name:'Jandira', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (SagradoCoracao:TrainStation {name:'Sagrado Coração', hasBikeParkingTerminal: false, hasBikeAttachingPost: true, hasCarParking: false, hasElevator: false, isFreeAccess: false}),
 (EngCardoso:TrainStation {name:'Engº Cardoso', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
-(Itapevi:TrainStation {name:'Itapevi', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
+(Itapevi:TrainStation:BusTerminal {name:'Itapevi', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: true, isFreeAccess: false}),
 (SantaRita:TrainStation {name:'Santa Rita', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false, isFreeAccess: true}),
 (AmadorBueno:TrainStation {name:'Amador Bueno', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasCarParking: false, hasElevator: false, isFreeAccess: true})
 
@@ -699,6 +699,7 @@ CREATE
 (MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(BarraFunda),
 (MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(Tamanduatei),
 (MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(RioGrandeSerra),
+(MetropolitanBus)<-[:Part_Of{isPaid:'always'}]-(Jandira),
 
 // Touristic Express
 (TouristicExpress)<-[:Part_Of{isPaid:'always'}]-(SantoAndre),
