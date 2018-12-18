@@ -464,7 +464,9 @@ CREATE
 (Jabaquara)-[:Connect{transport:'bus'}]->(ZooTerminal),
 
 // Airport Express
-(Luz)-[:Connect{transport:'train'}]-(AeroportoGuarulhos)
+(Luz)-[:Connect{transport:'train'}]->(AeroportoGuarulhos),
+
+(Jandira)-[:Connect{transport:'bus'}]->(Itapevi)
 
 // Line has Stations
 CREATE 
