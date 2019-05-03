@@ -178,7 +178,7 @@ RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 ```
 MATCH 
 	(s1{name:"Grajaú"}), 
-    (s2{name:"Rio Grande da Serra"}),
+	(s2{name:"Rio Grande da Serra"}),
 	p = shortestPath((s1)-[:Connect*]-(s2))
 WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.transport='train' OR x.transport='metro')
 RETURN EXTRACT(n IN NODES(p) | n.name) AS Directions
