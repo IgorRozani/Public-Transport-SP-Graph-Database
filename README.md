@@ -1,116 +1,115 @@
 # Public Transport SP - Graph Database
+Metropolitan Transport Network from São Paulo, Brazil, mapped in a NoSQL graph database.
 
-Transporte Metropolitano de SP mapeado em um banco de NoSQL de grafos.
+Read this in other languages: [Português](README.pt-br.md)
 
-Você pode ler uma explicação mais detalhada no meu medium: https://medium.com/@igorrozani/transporte-de-sp-em-um-banco-de-grafos-3ce17d4f1f41
+You can read a more detailed explanation (in portuguese) in my medium: https://medium.com/@igorrozani/transporte-de-sp-em-um-banco-de-grafos-3ce17d4f1f41
 
-## Sumário
+## Summary
+* [Inspiration](#inspiration)
+* [Database structure](#database-structure)
+* [Required softwares](#required-softwares)
+* [Examples](#examples)
+  * [Create](#create)
+  * [Delete](#delete)
+  * [Queries](#queries)
 
-* [Inspiração](#inspiração)
-* [Estrutura do banco](#estrutura-do-banco)
-* [Softwares necessários](#softwares-necessários)
-* [Exemplos](#exemplos)
-  * [Criação](#criação)
-  * [Exclusão](#exclusão)
-  * [Consultas](#consultas)
+## Inspiration
 
-## Inspiração
-
-Baseado no mapa da rede de transporte metropolitano da cidade de São Paulo (imagem abaixo), mapeei todas as estações, terminais, linhas e conexões utilizando em um banco NoSQL de grafos, utilizando o banco Neo4j e a linguagem openCypher.
+Based in the metropolitan transport network map from São Paulo (image below), i mapped all the stations, terminals, lines and connections utilizing the database Neo4j and the language openCypher.
 
 ![Map](img/map.png?raw=true "Map")
 
-## Estrutura do banco
+## Database structure
+It was defined the following database model:
 
-Baseado na imagem anterior, foi definida a seguinte modelagem do banco:
 
 ![Database model](img/TransportSP.png?raw=true "Database model")
 
-Sendo composto dos seguintes labels de nós (nodes), cada um representando um ponto do mapa:
-- BusTerminal - terminais de ônibus. Por Exemplo: São Bernardo e Jabaquara;
-- Company - empresas responsáveis pelas linhas de transporte de SP. Exemplo: CPTM;
-- Line - linhas de transporte. Exemplo: Linha amarela;
-- MetroStation - estações de metro. Exemplo: Estação Paulista;
-- OrcaShuttleTerminal - terminais da Ponte Orca. Exemplo: Estação Jabaquara;
-- PointOfInterest - Pontos de interesse. Exemplo: Rodoviária e Zoológico;
-- TouristicTerminal - estações turística. Exempo: Estação Paranapiacaba;
-- TrainStation - estações de trem. Exemplo: Morumbi.
+The nodes are:
+- BusTerminal - bus terminals. Example: São Bernardo;
+- Company - the company responsable by the transport line. Example: CPTM;
+- Line - the transport lines. Example: Yellow line;
+- MetroStation - the metro stations. Example: Paulista;
+- OrcaShuttleTerminal - Orca Shuttle terminals. Example: Jabaquara;
+- PointOfInterest - points of interest from the map. Example: Zoo;
+- TouristicTerminal - tourist terminal stations. Example: Paranapiacaba;
+- TrainStation - train stations. Example: Morumbi.
 
-E dos seguintes relacionamentos:
-- Connect - conexão entre estações e/ou terminais;
-- Has - localização de um ponto de interesse;
-- Integration - integração entre diferentes tipos de estações e/ou terminais;
-- Own - posse de um linha por uma empresa;
-- Part_Of - a participação de um estação e/ou terminal em uma linha.
+And the relationships are:
+- Connect - connection between stations and/or terminals;
+- Has - relationship between Station/Terminal and the PointOfInterest;
+- Integration - integration between different types of stations and terminals;
+- Own - relationship between the company and line, to represent that the company owns that line;
+- Part_Of - relationship between the station/terminal and line, to represent that the station/terminal is part of that line.
 
-## Softwares necessários
+## Required softwares
+To run this project, it's necessary to install the Neo4j, [you can download it here](https://neo4j.com/download).
 
-Para rodar o projeto, é necessário instalar o Neo4j, você pode baixar [clicando aqui](https://neo4j.com/download/?ref=hro).
+## Examples
 
-## Exemplos
+### Create
 
-### Criação
-
-#### Criar um nó
+#### Create a node
 
 ```
 CREATE (:Line {name:'Emerald', number:9})
 ```
 
-#### Criar um relacionamento
+#### Create a relationship
 
 ```
 MATCH (s1:TrainStation{name:'Poá'}),(s2:TrainStation{name:'Suzano'})
 CREATE (s1)-[r:Connect{transport: 'train'}]->(s2)
 ```
 
-### Exclusão
+### Delete
 
-#### Excluir todos os itens do banco
+#### Delete all database items
 
 ```
 MATCH (n)-[r]-()
 DELETE n,r
 ```
 
-### Consultas
+### Queries
 
-#### Visualizar todos nós do sistema
+#### All database nodes
 
 ```
 MATCH (n)
 RETURN n
 ```
 
-#### Todas as estações de uma linha
+#### All stations/terminals from a line
 
 ```
 MATCH (l:Line)-[:Part_Of]-(s)
-RETURN l.name, collect(s.name)
+RETURN l.name AS Line, collect(s.name) AS Stations
 ```
 
-#### Todos os nós que possuem elevador
+#### All stations with elevator
 
 ```
 MATCH (s {hasElevator:true})
 RETURN s
 ```
 
-#### Todas as conexões de um nó
+#### All station connections 
 
 ```
 MATCH ({name:'Luz'})-[:Connect]-(s)
 Return s
 ```
 
-#### Todas as conexões do label TouristicTerminal de um nó
+#### All node connections of TouristicTerminal label
 
 ```
 MATCH ({name:'Luz'})-[:Connect]-(s:TouristicTerminal)
 Return s
 ```
 
-#### Todas as linhas de uma empresa
+#### All lines from a company
 
 ```
 MATCH (c:Company)-[:Own]-(l:Line)
@@ -121,7 +120,7 @@ RETURN c.name, lines
 ORDER BY c.name
 ```
 
-#### Todos os tipos de conexão ordernado por ordem alfabética
+#### All relationship type sorted by alphabetical order
 
 ```
 MATCH ()-[r]-()
@@ -130,7 +129,7 @@ RETURN DISTINCT relationships
 ORDER BY relationships
 ```
 
-#### Todos os labels dos nós ordernado por ordem alfabética
+#### All nodes label sorted by alphabetical order
 
 ```
 MATCH (n)
@@ -140,7 +139,7 @@ RETURN DISTINCT label
 ORDER BY label
 ```
 
-#### Quantidade de estações/terminais das linhas
+#### Quantity stations or terminals by line
 
 ```
 MATCH (l:Line)-[:Part_Of]-(s)
@@ -149,16 +148,15 @@ RETURN l.name, qtd
 ORDER BY l.name
 ```
 
-#### Quantidade de locais que possuem bicicletário ou paraciclos
+#### Quantity of place with bike parking terminal or bike attaching post
 
 ```
-MATCH (l:Line)-[:Part_Of]-(s)
-WITH l, count(s) as qtd
-RETURN CASE WHEN l.number IS NULL THEN l.name ELSE l.number END, sum(qtd) as total
-ORDER BY total DESC
+MATCH (n)
+WHERE n.hasBikeAttachingPost = true OR n.hasBikeParkingTerminal = true
+RETURN n
 ```
 
-#### Todos nós que estão em mais de uma linha
+#### All nodes that are in more than one line
 
 ```
 MATCH (s)-[p:Part_Of]-(:Line)
@@ -168,14 +166,14 @@ RETURN s.name, qtd
 ORDER BY qtd DESC
 ```
 
-#### Caminho com o menor número de estações independente do tipo
+#### Shortest path between stations, indepent of stations types
 
 ```
 MATCH x = shortestPath((s1{name:"Grajaú"})-[:Connect*]-(s2{name:"Rio Grande da Serra"}))
 RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 ```
 
-#### Menor caminho utilizando apenas trem ou metro
+#### Shortest path between stations, only using train or metro
 
 ```
 MATCH 
