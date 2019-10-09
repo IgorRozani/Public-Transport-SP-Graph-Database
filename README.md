@@ -37,11 +37,11 @@ The nodes are:
 - TrainStation - train stations. Example: Morumbi.
 
 And the relationships are:
-- Connect - connection between stations and/or terminals;
-- Has - relationship between Station/Terminal and the PointOfInterest;
-- Integration - integration between different types of stations and terminals;
-- Own - relationship between the company and line, to represent that the company owns that line;
-- Part_Of - relationship between the station/terminal and line, to represent that the station/terminal is part of that line.
+- CONNECT - connection between stations and/or terminals;
+- HAS - relationship between Station/Terminal and the PointOfInterest;
+- INTEGRATION - integration between different types of stations and terminals;
+- OWN - relationship between the company and line, to represent that the company owns that line;
+- PART_OF - relationship between the station/terminal and line, to represent that the station/terminal is part of that line.
 
 ## Required softwares
 To run this project, it's necessary to install the Neo4j, [you can download it here](https://neo4j.com/download).
@@ -60,7 +60,7 @@ CREATE (:Line {name:'Emerald', number:9})
 
 ```
 MATCH (s1:TrainStation{name:'Poá'}),(s2:TrainStation{name:'Suzano'})
-CREATE (s1)-[r:Connect{transport: 'train'}]->(s2)
+CREATE (s1)-[r:CONNECT{transport: 'train'}]->(s2)
 ```
 
 ### Delete
@@ -84,7 +84,7 @@ RETURN n
 #### All stations/terminals from a line
 
 ```
-MATCH (l:Line)-[:Part_Of]-(s)
+MATCH (l:Line)-[:PART_OF]-(s)
 RETURN l.name AS Line, collect(s.name) AS Stations
 ```
 
@@ -98,21 +98,21 @@ RETURN s
 #### All station connections 
 
 ```
-MATCH ({name:'Luz'})-[:Connect]-(s)
+MATCH ({name:'Luz'})-[:CONNECT]-(s)
 Return s
 ```
 
 #### All node connections of TouristicTerminal label
 
 ```
-MATCH (s:TouristicTerminal)-[:Connect]-({name:'Luz'})
+MATCH (s:TouristicTerminal)-[:CONNECT]-({name:'Luz'})
 Return s
 ```
 
 #### All lines from a company
 
 ```
-MATCH (c:Company)-[:Own]-(l:Line)
+MATCH (c:Company)-[:OWN]-(l:Line)
 WITH c, l
 ORDER BY l.number, l.name
 WITH c, collect(CASE WHEN l.number IS NULL THEN l.name ELSE l.number + ' - ' + l.name END) as lines
@@ -142,7 +142,7 @@ ORDER BY label
 #### Quantity stations or terminals by line
 
 ```
-MATCH (l:Line)-[:Part_Of]-(s)
+MATCH (l:Line)-[:PART_OF]-(s)
 WITH l, count(s) as qtd
 RETURN l.name, qtd
 ORDER BY l.name
@@ -159,7 +159,7 @@ RETURN n
 #### All nodes that are in more than one line
 
 ```
-MATCH (s)-[p:Part_Of]-(:Line)
+MATCH (:Line)-[p:PART_OF]-(s)
 WITH s, count(p) as qtd
 WHERE qtd > 1
 RETURN s.name, qtd
@@ -169,7 +169,7 @@ ORDER BY qtd DESC
 #### Shortest path between stations, indepent of stations types
 
 ```
-MATCH x = shortestPath((s1{name:"Grajaú"})-[:Connect*]-(s2{name:"Rio Grande da Serra"}))
+MATCH x = shortestPath((s1{name:"Grajaú"})-[:CONNECT*]-(s2{name:"Rio Grande da Serra"}))
 RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 ```
 
@@ -179,7 +179,7 @@ RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 MATCH 
 	(s1{name:"Grajaú"}), 
 	(s2{name:"Rio Grande da Serra"}),
-	p = shortestPath((s1)-[:Connect*]-(s2))
+	p = shortestPath((s1)-[:CONNECT*]-(s2))
 WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.transport='train' OR x.transport='metro')
 RETURN EXTRACT(n IN NODES(p) | n.name) AS Directions
 ```

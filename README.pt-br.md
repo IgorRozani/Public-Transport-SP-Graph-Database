@@ -35,11 +35,11 @@ Sendo composto dos seguintes labels de nós (nodes), cada um representando um po
 - TrainStation - estações de trem. Exemplo: Morumbi.
 
 E dos seguintes relacionamentos:
-- Connect - conexão entre estações e/ou terminais;
-- Has - localização de um ponto de interesse;
-- Integration - integração entre diferentes tipos de estações e/ou terminais;
-- Own - posse de um linha por uma empresa;
-- Part_Of - a participação de um estação e/ou terminal em uma linha.
+- CONNECT - conexão entre estações e/ou terminais;
+- HAS - localização de um ponto de interesse;
+- INTEGRATION - integração entre diferentes tipos de estações e/ou terminais;
+- OWN - posse de um linha por uma empresa;
+- PART_OF - a participação de um estação e/ou terminal em uma linha.
 
 ## Softwares necessários
 
@@ -59,7 +59,7 @@ CREATE (:Line {name:'Emerald', number:9})
 
 ```
 MATCH (s1:TrainStation{name:'Poá'}),(s2:TrainStation{name:'Suzano'})
-CREATE (s1)-[r:Connect{transport: 'train'}]->(s2)
+CREATE (s1)-[r:CONNECT{transport: 'train'}]->(s2)
 ```
 
 ### Exclusão
@@ -83,7 +83,7 @@ RETURN n
 #### Todas as estações de uma linha
 
 ```
-MATCH (l:Line)-[:Part_Of]-(s)
+MATCH (l:Line)-[:PART_OF]-(s)
 RETURN l.name, collect(s.name)
 ```
 
@@ -97,21 +97,21 @@ RETURN s
 #### Todas as conexões de um nó
 
 ```
-MATCH ({name:'Luz'})-[:Connect]-(s)
+MATCH ({name:'Luz'})-[:CONNECT]-(s)
 Return s
 ```
 
 #### Todas as conexões do label TouristicTerminal de um nó
 
 ```
-MATCH ({name:'Luz'})-[:Connect]-(s:TouristicTerminal)
+MATCH (s:TouristicTerminal)-[:CONNECT]-({name:'Luz'})
 Return s
 ```
 
 #### Todas as linhas de uma empresa
 
 ```
-MATCH (c:Company)-[:Own]-(l:Line)
+MATCH (c:Company)-[:OWN]-(l:Line)
 WITH c, l
 ORDER BY l.number, l.name
 WITH c, collect(CASE WHEN l.number IS NULL THEN l.name ELSE l.number + ' - ' + l.name END) as lines
@@ -141,7 +141,7 @@ ORDER BY label
 #### Quantidade de estações/terminais das linhas
 
 ```
-MATCH (l:Line)-[:Part_Of]-(s)
+MATCH (l:Line)-[:PART_OF]-(s)
 WITH l, count(s) as qtd
 RETURN l.name, qtd
 ORDER BY l.name
@@ -158,7 +158,7 @@ RETURN n
 #### Todos nós que estão em mais de uma linha
 
 ```
-MATCH (s)-[p:Part_Of]-(:Line)
+MATCH (:Line)-[p:PART_OF]-(s)
 WITH s, count(p) as qtd
 WHERE qtd > 1
 RETURN s.name, qtd
@@ -168,7 +168,7 @@ ORDER BY qtd DESC
 #### Caminho com o menor número de estações independente do tipo
 
 ```
-MATCH x = shortestPath((s1{name:"Grajaú"})-[:Connect*]-(s2{name:"Rio Grande da Serra"}))
+MATCH x = shortestPath((s1{name:"Grajaú"})-[:CONNECT*]-(s2{name:"Rio Grande da Serra"}))
 RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 ```
 
@@ -178,7 +178,7 @@ RETURN EXTRACT(n IN NODES(x) | n.name) AS Directions
 MATCH 
 	(s1{name:"Grajaú"}), 
     (s2{name:"Rio Grande da Serra"}),
-	p = shortestPath((s1)-[:Connect*]-(s2))
+	p = shortestPath((s1)-[:CONNECT*]-(s2))
 WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.transport='train' OR x.transport='metro')
 RETURN EXTRACT(n IN NODES(p) | n.name) AS Directions
 ```
