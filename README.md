@@ -105,7 +105,7 @@ Return s
 #### All node connections of TouristicTerminal label
 
 ```
-MATCH ({name:'Luz'})-[:Connect]-(s:TouristicTerminal)
+MATCH (s:TouristicTerminal)-[:Connect]-({name:'Luz'})
 Return s
 ```
 
