@@ -116,7 +116,7 @@ CREATE
 (AdolphoPinheiro:MetroStation {name:'Adolpho Pinheiro', hasBikeParkingTerminal: false, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
 (AltoBoaVista:MetroStation {name:'Alto da Boa Vista', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
 (BorbaGato:MetroStation {name:'Borba Gato', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
-(Brooklin:MetroStation {name:'Brooklin', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
+(Brooklin:MetroStation:BusTerminal {name:'Brooklin', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
 (CampoBelo:MetroStation {name:'Campo Belo', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
 (Eucaliptos:MetroStation {name:'Eucaliptos', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
 (Moema:MetroStation {name:'Moema', hasBikeParkingTerminal: true, hasBikeAttachingPost: false, hasElevator: true, isFreeAccess: false}),
@@ -449,7 +449,8 @@ CREATE
 (VilaGalvao)-[:CONNECT{transport: 'bus'}]->(Cecap),
 (Cecap)-[:CONNECT{transport: 'bus'}]->(ParadaRodoviaria),
 (ParadaRodoviaria)-[:CONNECT{transport: 'bus'}]->(Taboao),
-(Morumbi)-[:CONNECT{transport:'bus'}]->(Diadema),
+(Morumbi)-[:CONNECT{transport:'bus'}]->(Brooklin),
+(Brooklin)-[:CONNECT{transport:'bus'}]->(Diadema),
 (Jabaquara)-[:CONNECT{transport:'bus'}]->(Diadema),
 (Diadema)-[:CONNECT{transport: 'bus'}]->(Piraporinha),
 (Piraporinha)-[:CONNECT{transport: 'bus'}]->(SaoBernardo),
@@ -683,6 +684,7 @@ CREATE
 
 // Metropolitan Bus Corridor ABD
 (MetropolitanBusCorridorABD)<-[:PART_OF{isPaid:'always'}]-(Morumbi),
+(MetropolitanBusCorridorABD)<-[:PART_OF{isPaid:'always'}]-(Brooklin),
 (MetropolitanBusCorridorABD)<-[:PART_OF{isPaid:'always'}]-(Diadema),
 (MetropolitanBusCorridorABD)<-[:PART_OF{isPaid:'always'}]-(Jabaquara),
 (MetropolitanBusCorridorABD)<-[:PART_OF{isPaid:'always'}]-(Piraporinha),
